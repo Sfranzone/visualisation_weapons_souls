@@ -1,4 +1,24 @@
-.inventory_slot{
-    width: 50px;
-    height: 50px;
+.background{
+    position: relative;
+    top: 0;
+    left: 0;
+    z-index: 0;
+}
+
+.inventory_slot_white{
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    top: 50px;
+    left: 50px;
+    z-index: 1;
+}
+
+.inventory_slot_black{
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    top: 50px;
+    left: 500px;
+    z-index: 1;
 }
