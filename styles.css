@@ -10,8 +10,6 @@
     width: 100px;
     height: 100px;
     position: absolute;
-    top: 200px;
-    left: 500px;
     z-index: 2;
     opacity: 0;
 }
@@ -53,37 +51,60 @@
 /* Hover effect for empty slots */
 .inventory_slot_empty:hover + .description {
     visibility: visible;
-    color: white;
 }
 
 /* Specific positioning for daggers */
 .daggers {
-    top: 200px;
-    left: 500px;
+    top: 100px;
+    left: 100px;
 }
 .daggers_description {
-    top: 250px;
-    left: 550px;
+    visibility: hidden;
+    top: 150px;
+    left: 150px;
+}
+.daggers_empty {
+    top: 100px;
+    left: 100px;
+}
+.daggers_empty:hover + .daggers_description {
+    visibility: visible;
 }
 
 /* Specific positioning for straight_swords */
 .straight_swords {
-    top: 200px;
-    left: 500px;
+    top: 250px;
+    left: 100px;
 }
 .straight_swords_description {
+    visibility: hidden;
+    top: 350px;
+    left: 150px;
+}
+.straight_swords_empty {
     top: 250px;
-    left: 550px;
+    left: 100px;
+}
+.straight_swords_empty:hover + .straight_swords_description {
+    visibility: visible;
 }
 
 /* Specific positioning for greatswords */
 .greatswords {
-    top: 200px;
-    left: 500px;
+    top: 400px;
+    left: 100px;
 }
 .greatswords_description {
-    top: 250px;
-    left: 550px;
+    visibility: hidden;
+    top: 450px;
+    left: 150px;
+}
+.greatswords_empty {
+    top: 400px;
+    left: 100px;
+}
+.greatswords_empty:hover + .greatswords_description {
+    visibility: visible;
 }
 
 /* Specific positioning for colossal_swords */
