@@ -3,34 +3,416 @@
     top: 0;
     left: 0;
     z-index: 0;
+    filter: grayscale();
 }
 
-.inventory_slot_white{
-    width: 100px;
-    height: 100px;
-    position: absolute;
-    top: 50px;
-    left: 50px;
-    z-index: 1;
-}
-
-.inventory_slot_black{
+.inventory_slot_empty{
     width: 100px;
     height: 100px;
     position: absolute;
     top: 200px;
     left: 500px;
+    z-index: 2;
+    opacity: 0;
+}
+
+/* General styles for all inventory slots */
+.inventory_slot {
+    width: 100px;
+    height: 100px;
+    position: absolute;
     z-index: 1;
     filter: grayscale();
     opacity: 0.5;
 }
-
-.inventory_slot_black_colored{
+.inventory_slot_colored {
     width: 100px;
     height: 100px;
     position: absolute;
+    z-index: 1;
+    clip: rect(50px,100px,100px,0px);
+}
+
+/* General styles for all descriptions */
+.description {
+    width: 150px;
+    min-height: 100px;
+    position: absolute;
+    z-index: 1;
+    background-color: black;
+    opacity: 0.8;
+    border-style: solid;
+    border-color: gray;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    color: white;
+}
+
+/* Hover effect for empty slots */
+.inventory_slot_empty:hover + .description {
+    visibility: visible;
+    color: white;
+}
+
+/* Specific positioning for daggers */
+.daggers {
     top: 200px;
     left: 500px;
-    z-index: 1;
-    clip: rect(0px,50px,50px,0px);
+}
+.daggers_description {
+    top: 250px;
+    left: 550px;
+}
+
+/* Specific positioning for straight_swords */
+.straight_swords {
+    top: 200px;
+    left: 500px;
+}
+.straight_swords_description {
+    top: 250px;
+    left: 550px;
+}
+
+/* Specific positioning for greatswords */
+.greatswords {
+    top: 200px;
+    left: 500px;
+}
+.greatswords_description {
+    top: 250px;
+    left: 550px;
+}
+
+/* Specific positioning for colossal_swords */
+.colossal_swords {
+    top: 200px;
+    left: 500px;
+}
+.colossal_swords_description {
+    top: 250px;
+    left: 550px;
+}
+
+/* Specific positioning for thrusting_swords */
+.thrusting_swords {
+    top: 200px;
+    left: 500px;
+}
+.thrusting_swords_description {
+    top: 250px;
+    left: 550px;
+}
+
+/* Specific positioning for heavy_thrusting_swords */
+.heavy_thrusting_swords {
+    top: 200px;
+    left: 500px;
+}
+.heavy_thrusting_swords_description {
+    top: 250px;
+    left: 550px;
+}
+
+/* Specific positioning for curved_swords */
+.curved_swords {
+    top: 200px;
+    left: 500px;
+}
+.curved_swords_description {
+    top: 250px;
+    left: 550px;
+}
+
+/* Specific positioning for curved_greatswords */
+.curved_greatswords {
+    top: 200px;
+    left: 500px;
+}
+.curved_greatswords_description {
+    top: 250px;
+    left: 550px;
+}
+
+/* Specific positioning for katanas */
+.katanas {
+    top: 200px;
+    left: 500px;
+}
+.katanas_description {
+    top: 250px;
+    left: 550px;
+}
+
+/* Specific positioning for twinblades */
+.twinblades {
+    top: 200px;
+    left: 500px;
+}
+.twinblades_description {
+    top: 250px;
+    left: 550px;
+}
+
+/* Specific positioning for axes */
+.axe {
+    top: 500px;
+    left: 200px;
+}
+.axe_description {
+    visibility: hidden;
+    top: 550px;
+    left: 250px;
+}
+
+/* Specific positioning for greataxes */
+.greataxes {
+    top: 200px;
+    left: 500px;
+}
+.greataxes_description {
+    top: 250px;
+    left: 550px;
+}
+
+/* Specific positioning for hammers */
+.hammers {
+    top: 200px;
+    left: 500px;
+}
+.hammers_description {
+    top: 250px;
+    left: 550px;
+}
+
+/* Specific positioning for flails */
+.flails {
+    top: 200px;
+    left: 500px;
+}
+.flails_description {
+    top: 250px;
+    left: 550px;
+}
+
+/* Specific positioning for great_hammers */
+.great_hammers {
+    top: 200px;
+    left: 500px;
+}
+.great_hammers_description {
+    top: 250px;
+    left: 550px;
+}
+
+/* Specific positioning for colossal_weapons */
+.colossal_weapons {
+    top: 200px;
+    left: 500px;
+}
+.colossal_weapons_description {
+    top: 250px;
+    left: 550px;
+}
+
+/* Specific positioning for spears */
+.spears {
+    top: 200px;
+    left: 500px;
+}
+.spears_description {
+    top: 250px;
+    left: 550px;
+}
+
+/* Specific positioning for great_spears */
+.great_spears {
+    top: 200px;
+    left: 500px;
+}
+.great_spears_description {
+    top: 250px;
+    left: 550px;
+}
+
+/* Specific positioning for halberds */
+.halberds {
+    top: 200px;
+    left: 500px;
+}
+.halberds_description {
+    top: 250px;
+    left: 550px;
+}
+
+/* Specific positioning for reapers */
+.reapers {
+    top: 200px;
+    left: 500px;
+}
+.reapers_description {
+    top: 250px;
+    left: 550px;
+}
+
+/* Specific positioning for whips */
+.whips {
+    top: 200px;
+    left: 500px;
+}
+.whips_description {
+    top: 250px;
+    left: 550px;
+}
+
+/* Specific positioning for kusarigama */
+.kusarigama {
+    top: 200px;
+    left: 500px;
+}
+.kusarigama_description {
+    top: 250px;
+    left: 550px;
+}
+
+/* Specific positioning for fists */
+.fists {
+    top: 200px;
+    left: 500px;
+}
+.fists_description {
+    top: 250px;
+    left: 550px;
+}
+
+/* Specific positioning for claws */
+.claws {
+    top: 200px;
+    left: 500px;
+}
+.claws_description {
+    top: 250px;
+    left: 550px;
+}
+
+/* Specific positioning for light_bows */
+.light_bows {
+    top: 200px;
+    left: 500px;
+}
+.light_bows_description {
+    top: 250px;
+    left: 550px;
+}
+
+/* Specific positioning for bows */
+.bows {
+    top: 200px;
+    left: 500px;
+}
+.bows_description {
+    top: 250px;
+    left: 550px;
+}
+
+/* Specific positioning for greatbows */
+.greatbows {
+    top: 200px;
+    left: 500px;
+}
+.greatbows_description {
+    top: 250px;
+    left: 550px;
+}
+
+/* Specific positioning for crossbows */
+.crossbows {
+    top: 200px;
+    left: 500px;
+}
+.crossbows_description {
+    top: 250px;
+    left: 550px;
+}
+
+/* Specific positioning for ballistas */
+.ballistas {
+    top: 200px;
+    left: 500px;
+}
+.ballistas_description {
+    top: 250px;
+    left: 550px;
+}
+
+/* Specific positioning for glintstone_staffs */
+.glintstone_staffs {
+    top: 200px;
+    left: 500px;
+}
+.glintstone_staffs_description {
+    top: 250px;
+    left: 550px;
+}
+
+/* Specific positioning for sacred_seals */
+.sacred_seals {
+    top: 200px;
+    left: 500px;
+}
+.sacred_seals_description {
+    top: 250px;
+    left: 550px;
+}
+
+/* Specific positioning for torches */
+.torches {
+    top: 200px;
+    left: 500px;
+}
+.torches_description {
+    top: 250px;
+    left: 550px;
+}
+
+/* Specific positioning for tools */
+.tools {
+    top: 200px;
+    left: 500px;
+}
+.tools_description {
+    top: 250px;
+    left: 550px;
+}
+
+/* Specific positioning for hand_guns */
+.hand_guns {
+    top: 200px;
+    left: 500px;
+}
+.hand_guns_description {
+    top: 250px;
+    left: 550px;
+}
+
+/* Specific positioning for long_guns */
+.long_guns {
+    top: 200px;
+    left: 500px;
+}
+.long_guns_description {
+    top: 250px;
+    left: 550px;
+}
+
+/* Specific positioning for trick_weapons */
+.trick_weapons {
+    top: 200px;
+    left: 500px;
+}
+.trick_weapons_description {
+    top: 250px;
+    left: 550px;
 }
