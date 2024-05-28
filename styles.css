@@ -18,7 +18,19 @@
     width: 100px;
     height: 100px;
     position: absolute;
-    top: 50px;
+    top: 200px;
     left: 500px;
     z-index: 1;
+    filter: grayscale();
+    opacity: 0.5;
+}
+
+.inventory_slot_black_colored{
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    top: 200px;
+    left: 500px;
+    z-index: 1;
+    clip: rect(0px,50px,50px,0px);
 }
