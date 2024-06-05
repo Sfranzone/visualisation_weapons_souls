@@ -51,3 +51,13 @@ function change_fill(percent_weapon, weapon_type) {
 }
 
 change_fill(0, "daggers");
+
+
+//const weapons_json = JSON.parse(weaponData);
+console.log(weaponData);
+
+function test_json() {
+
+};
+
+test_json();
