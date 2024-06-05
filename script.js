@@ -14,7 +14,7 @@ fetch(jsonFilePath)
         console.log('Données importées :', data);
 
         // Vérification de la structure des données
-        if (Array.isArray(data)) {
+        if (data && typeof data === 'object' && !Array.isArray(data)) {
             console.log('La structure des données est correcte.');
             // Afficher un message de succès dans le DOM
             const successMessage = document.createElement('p');
@@ -34,10 +34,14 @@ fetch(jsonFilePath)
         document.body.appendChild(errorMessage);
     });
 
-//Changer le fill des armes en fonction du pourcentage
+// Changer le fill des armes en fonction du pourcentage
 function change_fill(percent_weapon, weapon_type) {
     let class_test = document.getElementById(`${weapon_type}`);
-    class_test.style.clipPath = `rect(${percent_weapon}px 100px 100px 0px)`;
+    if (class_test) {
+        class_test.style.clipPath = `rect(${percent_weapon}px 100px 100px 0px)`;
+    } else {
+        console.error(`Element with id ${weapon_type} not found.`);
+    }
 }
 
-change_fill(0,"daggers");
+change_fill(0, "daggers");
