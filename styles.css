@@ -28,7 +28,7 @@
     height: 100px;
     position: absolute;
     z-index: 1;
-    clip: rect(50px,100px,100px,0px);
+    clip-path: rect(50px 100px 100px 0px);
 }
 
 /* General styles for all descriptions */
