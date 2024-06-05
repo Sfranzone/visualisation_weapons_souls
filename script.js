@@ -1,6 +1,9 @@
 // Chemin relatif vers le fichier JSON
 const jsonFilePath = './weapon_category.json';
 
+// Déclaration de la variable pour stocker les données
+let weaponData = {};
+
 // Utilisation de fetch pour charger le fichier JSON
 fetch(jsonFilePath)
     .then(response => {
@@ -10,11 +13,14 @@ fetch(jsonFilePath)
         return response.json();
     })
     .then(data => {
+        // Stocker les données dans la variable
+        weaponData = data;
+
         // Vérifier les données importées
-        console.log('Données importées :', data);
+        console.log('Données importées :', weaponData);
 
         // Vérification de la structure des données
-        if (data && typeof data === 'object' && !Array.isArray(data)) {
+        if (weaponData && typeof weaponData === 'object' && !Array.isArray(weaponData)) {
             console.log('La structure des données est correcte.');
             // Afficher un message de succès dans le DOM
             const successMessage = document.createElement('p');
