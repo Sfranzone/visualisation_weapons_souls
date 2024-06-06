@@ -364,4 +364,14 @@ function change_fill(percent_weapon, weapon_type) {
     class_test.style.clipPath = `rect(${percent_weapon}px 100px 100px 0px)`;
 }
 
-change_fill(0,"daggers");
+change_fill(0, "daggers");
+
+
+//const weapons_json = JSON.parse(weaponData);
+console.log(weaponData);
+
+function test_json() {
+
+};
+
+test_json();
