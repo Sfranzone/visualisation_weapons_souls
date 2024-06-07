@@ -394,14 +394,34 @@ let weaponData = {
     hand_guns: { "name": "hand_guns","elden ring": 0, "dark souls iii": 0, "sekiro": 0, "remnant ii": 21, "bloodborne": 0, "nioh": 0, "total": 21 },
     long_guns: { "name": "long_guns","elden ring": 0, "dark souls iii": 0, "sekiro": 0, "remnant ii": 27, "bloodborne": 0, "nioh": 8, "total": 35 },
     trick_weapons: { "name": "trick_weapons","elden ring": 0, "dark souls iii": 0, "sekiro": 0, "remnant ii": 0, "bloodborne": 8, "nioh": 0, "total": 8 },
-    toutes_armes: { "name": "total","elden ring": 313, "dark souls iii": 222, "sekiro": 12, "remnant ii": 94, "bloodborne": 26, "nioh": 216, "total": 883 }
+    toutes_armes: { "name": "total","elden ring": 313, "dark souls iii": 222, "sekiro": 12, "remnant ii": 94, "bloodborne": 26, "nioh": 216, "total": 883 },
+    rien: { "name": "rien","elden ring": 0, "dark souls iii": 0, "sekiro": 0, "remnant ii": 0, "bloodborne": 0, "nioh": 0, "total": 0 }
+};
+
+//Dictionnaire des jeux
+let dict_games = {
+    elden_ring: false,
+    dark_souls_iii: false,
+    sekiro: false,
+    remnant_ii: false,
+    bloodborne: false,
+    nioh: false,
+};
+
+function change_game_status(div) {
+    if (div.checked == true) {
+        dict_games[div.value] = true;
+    } else {
+        dict_games[div.value] = false;
+    }
+    gothrough_weapons();
 };
 
 //Changer en pourcent
-function change_to_pourcent(weapon_total,weapon_name) {
-    let weapon_percentage = (Number(weapon_total)/Number(weaponData[weapon_name]["total"])*100);
+function change_to_pourcent(chosen_weapon,weapon_name) {
+    let weapon_percentage = (Number(chosen_weapon)/Number(weaponData[weapon_name]["total"])*100);
     console.log(Math.round(weapon_percentage));
-    return Math.round(100-weapon_percentage)
+    return Math.round(100-weapon_percentage);
 };
 
 //Changer le fill des armes en fonction du pourcentage
@@ -410,9 +430,47 @@ function change_fill(percent_weapon, weapon_type) {
     class_test.style.clipPath = `rect(${percent_weapon}px 100px 100px 0px)`;
 };
 
-let games_chosen = "elden ring";
+/* let games_chosen = "";
+function change_game() {
+    var my_check_box = document.getElementById("elden_ring_checkbox");
+    if (my_check_box.checked == true){
+        games_chosen = my_check_box.value;
+        //Boucle passage dans les objets
+        for (let x in weaponData) {
+            //console.log(weaponData[x]["total"]);
+            change_fill(change_to_pourcent(weaponData[x][games_chosen],x),x);
+        };
+    } else {
+        games_chosen = "rien";
+        for (let x in weaponData) {
+            //console.log(weaponData[x]["total"]);
+            change_fill(change_to_pourcent(weaponData[x][games_chosen],x),x);
+        };
+    }
+}; */
+
 //Boucle passage dans les objets: name
-for (let x in weaponData) {
-    //console.log(weaponData[x]["total"]);
-    change_fill(change_to_pourcent(weaponData[x][games_chosen],x),x);
-};
+function gothrough_weapons(){
+    for (let x in weaponData) {
+        var total_weapon_number = 0;
+        if (dict_games["elden_ring"] == true){
+            total_weapon_number += weaponData[x]["elden ring"];
+        };
+        if (dict_games["dark_souls_iii"] == true){
+            total_weapon_number += weaponData[x]["dark souls iii"];
+        };
+        if (dict_games["sekiro"] == true){
+            total_weapon_number += weaponData[x]["sekiro"];
+        };
+        if (dict_games["remnant_ii"] == true){
+            total_weapon_number += weaponData[x]["remnant ii"];
+        };
+        if (dict_games["bloodborne"] == true){
+            total_weapon_number += weaponData[x]["bloodborne"];
+        };
+        if (dict_games["nioh"] == true){
+            total_weapon_number += weaponData[x]["nioh"];
+        };
+        change_fill(change_to_pourcent(total_weapon_number,x),x);
+    };
+}
