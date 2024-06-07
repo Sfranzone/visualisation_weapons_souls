@@ -19,3 +19,4 @@ Cette question, vous pourrez la répondre en testant la visualisation.
 
 ##Comment utiliser
 Votre première étape consiste à cloner notre git. Une fois effectuer, vous lancez le projet sur votre navigateur, en utilisant par exemple la fonctionnalité "Go Live" de l'éditeur Visual Studio Code.
+Ensuite, suivez les instructions sur la page pour commencer à manipuler notre visualisation.

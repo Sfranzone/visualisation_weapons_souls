@@ -1,3 +1,30 @@
+body {
+    background-color: #000000; /* Couleur de fond noire */
+    color: #FFFFFF; /* Couleur de texte blanche */
+    font-family: fantasy, serif; /* Police de caractères */
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+.placeholder {
+    margin-left: 1000px;
+}
+
+.title {
+    font-size: 30px;
+    font-style: italic;
+    font-weight: bold;
+}
+
+.explanation {
+    margin-left: 180px;
+    margin-right: 180px;
+    font-size: 20px;
+    text-align: justify;
+    font-weight: bold;
+}
+
 .background{
     position: relative;
     top: 0;
@@ -685,5 +712,32 @@
 
 
 .visualisation_description {
-    display: inline;
+    top: 100px;
+}
+
+/* Hide the actual checkbox */
+.game-checkbox input[type="checkbox"] {
+    display: none;
+}
+
+/* Style the label to show the image */
+.game-checkbox img {
+    width: 100px; /* Adjust size as needed */
+    height: auto;
+    cursor: pointer;
+    border: 2px solid gray;
+    opacity: 0.6; /* Change opacity to indicate inactive state */
+    transition: opacity 0.2s;
+}
+
+/* Change the appearance when the checkbox is checked */
+.game-checkbox input[type="checkbox"]:checked + img {
+    opacity: 1; /* Fully opaque to indicate active state */
+    border: 2px solid green; /* Add a border or any other style */
+}
+
+.placeholder {
+    position: relative;
+    transform: translate(-900px, -1050px); /* Déplacer tout le conteneur */
+    z-index: 2;
 }
