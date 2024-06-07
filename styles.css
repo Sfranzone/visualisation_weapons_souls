@@ -5,10 +5,7 @@ body {
     margin: 0;
     padding: 0;
     text-align: center;
-}
-
-.placeholder {
-    margin-left: 1000px;
+    position: absolute;
 }
 
 .title {
@@ -18,15 +15,12 @@ body {
 }
 
 .explanation {
-    margin-left: 180px;
-    margin-right: 180px;
     font-size: 20px;
-    text-align: justify;
     font-weight: bold;
 }
 
 .background{
-    position: relative;
+    position: absolute;
     top: 0;
     left: 0;
     z-index: 0;
@@ -737,7 +731,9 @@ body {
 }
 
 .placeholder {
-    position: relative;
-    transform: translate(-560px, -1050px); /* Déplacer tout le conteneur */
+    position: absolute;
+    text-align: center;
+    margin-left: 1000px;
+    transform: translate(-750px, 0px); /* Déplacer tout le conteneur */
     z-index: 2;
 }
