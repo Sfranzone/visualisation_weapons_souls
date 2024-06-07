@@ -472,5 +472,6 @@ function gothrough_weapons(){
             total_weapon_number += weaponData[x]["nioh"];
         };
         change_fill(change_to_pourcent(total_weapon_number,x),x);
+        document.getElementById(`${x}_descr`).innerHTML = `${change_to_pourcent(total_weapon_number,x)}%`;
     };
-}
+};
