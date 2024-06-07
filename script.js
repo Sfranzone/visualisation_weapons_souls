@@ -421,13 +421,13 @@ function change_game_status(div) {
 function change_to_pourcent(chosen_weapon,weapon_name) {
     let weapon_percentage = (Number(chosen_weapon)/Number(weaponData[weapon_name]["total"])*100);
     console.log(Math.round(weapon_percentage));
-    return Math.round(100-weapon_percentage);
+    return Math.round(weapon_percentage);
 };
 
 //Changer le fill des armes en fonction du pourcentage
 function change_fill(percent_weapon, weapon_type) {
     let class_test = document.getElementById(`${weapon_type}`);
-    class_test.style.clipPath = `rect(${percent_weapon}px 100px 100px 0px)`;
+    class_test.style.clipPath = `rect(${100-percent_weapon}px 100px 100px 0px)`;
 };
 
 /* let games_chosen = "";
