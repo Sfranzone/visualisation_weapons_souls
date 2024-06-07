@@ -7,8 +7,12 @@ body {
     text-align: center;
 }
 
-.placeholder {
-    margin-left: 1000px;
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    z-index: 1;
 }
 
 .title {
@@ -21,7 +25,6 @@ body {
     margin-left: 180px;
     margin-right: 180px;
     font-size: 20px;
-    text-align: justify;
     font-weight: bold;
 }
 
@@ -738,6 +741,6 @@ body {
 
 .placeholder {
     position: relative;
-    transform: translate(-560px, -1050px); /* Déplacer tout le conteneur */
+    transform: translate(-1040px, -525px); /* Déplacer tout le conteneur */
     z-index: 2;
 }
