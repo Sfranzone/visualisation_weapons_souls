@@ -738,6 +738,6 @@ body {
 
 .placeholder {
     position: relative;
-    transform: translate(-900px, -1050px); /* Déplacer tout le conteneur */
+    transform: translate(-560px, -1050px); /* Déplacer tout le conteneur */
     z-index: 2;
 }
