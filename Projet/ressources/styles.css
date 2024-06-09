@@ -33,7 +33,7 @@ body {
     top: 0;
     left: 0;
     z-index: 0;
-    filter: grayscale();
+    filter: grayscale(1);
 }
 
 .inventory_slot_empty{
@@ -50,8 +50,8 @@ body {
     height: 100px;
     position: absolute;
     z-index: 1;
-    filter: grayscale();
-    opacity: 0.5;
+    filter: grayscale(1);
+    opacity: 0.8;
 }
 .inventory_slot_colored {
     width: 100px;
