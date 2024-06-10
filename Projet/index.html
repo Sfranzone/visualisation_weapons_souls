@@ -43,6 +43,9 @@
                 <img class="inventory_slot daggers" src="./ressources/pictures/daggers_in_inventory.jpeg" alt="Inventory slot black">
                 <img id="daggers" class="inventory_slot_colored daggers" src="./ressources/pictures/daggers_in_inventory.jpeg" alt="Inventory slot daggers colored">
                 <img class="daggers_empty inventory_slot_empty" src="./ressources/pictures/daggers_in_inventory.jpeg" alt="Inventory slot empty">
+                <label for="daggers_checkbox" class="inventory_slot_empty daggers weapons_checkbox">
+                    <input type="checkbox" id="daggers_checkbox" value="daggers_games" onchange="showTitle(this)">
+                </label>
                 <div class="daggers_description description">Les dagues sont des armes légères et facilement transportables. Dans les jeux, cela se ressent au niveau du poids de l'équipement et de la rapidité des attaques. Elles possèdent également un taux de coup critique plus élevé que la moyenne pour compenser leur dégât de base assez faible.<br><div id="daggers_descr">0%</div></div>
 
                 <!-- Straight Swords -->
@@ -247,9 +250,20 @@
                 <img class="inventory_slot trick_weapons" src="./ressources/pictures/trick_weapons_in_inventory.jpeg" alt="Inventory slot black">
                 <img id="trick_weapons" class="inventory_slot_colored trick_weapons" src="./ressources/pictures/trick_weapons_in_inventory.jpeg" alt="Inventory slot trick weapons colored">
                 <img class="trick_weapons_empty inventory_slot_empty" src="./ressources/pictures/trick_weapons_in_inventory.jpeg" alt="Inventory slot empty">
+                <label for="trick_weapons_checkbox" class="inventory_slot_empty trick_weapons weapons_checkbox">
+                    <input type="checkbox" id="trick_weapons_checkbox" value="trick_weapons_games" onchange="showTitle(this)">
+                </label>
                 <div class="trick_weapons_description description">Exclusif à l'univers de Bloodborne, les armes métamorphosables sont des armes (de corps à corps et/ou de distance) qui, selon la façon dont elles sont repliées, leur usage diffère.<br><div id="trick_weapons_descr">0%</div></div>
             </div>
         </div>
+    </div>
+    <div class="container_2">
+        <img class="weapon_identifier_ER" src="./ressources/pictures/elden_ring_title.png" alt="Elden Ring Title">
+        <img class="weapon_identifier_DS" src="./ressources/pictures/dark_souls_3_title.webp" alt="Dark Souls III Title">
+        <img class="weapon_identifier_S" src="./ressources/pictures/sekiro_title.png" alt="Sekiro Title">
+        <img class="weapon_identifier_R" src="./ressources/pictures/remnant_2_title.avif" alt="Remnant II Title">
+        <img class="weapon_identifier_B" src="./ressources/pictures/bloodborne_title.png" alt="Bloodborne Title">
+        <img class="weapon_identifier_N" src="./ressources/pictures/nioh_title.png" alt="Nioh Title">
     </div>
     <script src="script.js"></script>
 </body>

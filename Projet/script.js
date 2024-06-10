@@ -475,3 +475,36 @@ function gothrough_weapons(){
         document.getElementById(`${x}_descr`).innerHTML = `${change_to_pourcent(total_weapon_number,x)}%`;
     };
 };
+
+function showTitle(checkbox) {
+    // Vérifier si la checkbox des daggers est cochée
+    if (checkbox.id === 'daggers_checkbox' && checkbox.checked) {
+        document.querySelectorAll('.container_2 img').forEach(img => {
+            // Montrer les images liées aux daggers
+            if (img.classList.contains('weapon_identifier_DS') || img.classList.contains('weapon_identifier_ER') || img.classList.contains('weapon_identifier_R')) {
+                img.style.visibility = 'visible';
+            } else {
+                img.style.visibility = 'hidden';
+            }
+        });
+    }
+
+    // Vérifier si la checkbox des trick weapons est cochée
+    if (checkbox.id === 'trick_weapons_checkbox' && checkbox.checked) {
+        document.querySelectorAll('.container_2 img').forEach(img => {
+            // Montrer l'image de Bloodborne
+            if (img.classList.contains('weapon_identifier_B')) {
+                img.style.visibility = 'visible';
+            } else {
+                img.style.visibility = 'hidden';
+            }
+        });
+    }
+
+    // Si aucune checkbox n'est cochée, montrer toutes les images
+    if (!checkbox.checked) {
+        document.querySelectorAll('.container_2 img').forEach(img => {
+            img.style.visibility = 'visible';
+        });
+    }
+}
