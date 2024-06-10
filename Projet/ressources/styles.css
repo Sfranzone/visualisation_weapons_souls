@@ -106,7 +106,7 @@ body {
 }
 .daggers_description {
     visibility: hidden;
-    top: 150px;
+    top: 200px;
     left: 150px;
 }
 .daggers_empty {
@@ -142,7 +142,7 @@ body {
 }
 .greatswords_description {
     visibility: hidden;
-    top: 450px;
+    top: 500px;
     left: 150px;
 }
 .greatswords_empty {
@@ -160,7 +160,7 @@ body {
 }
 .colossal_swords_description {
     visibility: hidden;
-    top: 600px;
+    top: 650px;
     left: 150px;
 }
 .colossal_swords_empty {
@@ -178,7 +178,7 @@ body {
 }
 .thrusting_swords_description {
     visibility: hidden;
-    top: 750px;
+    top: 800px;
     left: 150px;
 }
 .thrusting_swords_empty {
@@ -196,7 +196,7 @@ body {
 }
 .heavy_thrusting_swords_description {
     visibility: hidden;
-    top: 900px;
+    top: 950px;
     left: 150px;
 }
 .heavy_thrusting_swords_empty {
@@ -214,7 +214,7 @@ body {
 }
 .curved_swords_description {
     visibility: hidden;
-    top: 150px;
+    top: 200px;
     left: 300px;
 }
 .curved_swords_empty {
@@ -232,7 +232,7 @@ body {
 }
 .curved_greatswords_description {
     visibility: hidden;
-    top: 300px;
+    top: 350px;
     left: 300px;
 }
 .curved_greatswords_empty {
@@ -250,7 +250,7 @@ body {
 }
 .katanas_description {
     visibility: hidden;
-    top: 450px;
+    top: 500px;
     left: 300px;
 }
 .katanas_empty {
@@ -268,7 +268,7 @@ body {
 }
 .twinblades_description {
     visibility: hidden;
-    top: 600px;
+    top: 650px;
     left: 300px;
 }
 .twinblades_empty {
@@ -286,7 +286,7 @@ body {
 }
 .axe_description {
     visibility: hidden;
-    top: 750px;
+    top: 800px;
     left: 300px;
 }
 .axe_empty {
@@ -304,7 +304,7 @@ body {
 }
 .greataxes_description {
     visibility: hidden;
-    top: 900px;
+    top: 950px;
     left: 300px;
 }
 .greataxes_empty {
@@ -322,7 +322,7 @@ body {
 }
 .hammers_description {
     visibility: hidden;
-    top: 150px;
+    top: 200px;
     left: 450px;
 }
 .hammers_empty {
@@ -340,7 +340,7 @@ body {
 }
 .flails_description {
     visibility: hidden;
-    top: 300px;
+    top: 350px;
     left: 450px;
 }
 .flails_empty {
@@ -358,7 +358,7 @@ body {
 }
 .great_hammers_description {
     visibility: hidden;
-    top: 450px;
+    top: 500px;
     left: 450px;
 }
 .great_hammers_empty {
@@ -376,7 +376,7 @@ body {
 }
 .colossal_weapons_description {
     visibility: hidden;
-    top: 600px;
+    top: 650px;
     left: 450px;
 }
 .colossal_weapons_empty {
@@ -394,7 +394,7 @@ body {
 }
 .spears_description {
     visibility: hidden;
-    top: 750px;
+    top: 800px;
     left: 450px;
 }
 .spears_empty {
@@ -412,7 +412,7 @@ body {
 }
 .great_spears_description {
     visibility: hidden;
-    top: 900px;
+    top: 950px;
     left: 450px;
 }
 .great_spears_empty {
@@ -430,7 +430,7 @@ body {
 }
 .halberds_description {
     visibility: hidden;
-    top: 150px;
+    top: 200px;
     left: 600px;
 }
 .halberds_empty {
@@ -448,7 +448,7 @@ body {
 }
 .reapers_description {
     visibility: hidden;
-    top: 300px;
+    top: 350px;
     left: 600px;
 }
 .reapers_empty {
@@ -466,7 +466,7 @@ body {
 }
 .whips_description {
     visibility: hidden;
-    top: 450px;
+    top: 500px;
     left: 600px;
 }
 .whips_empty {
@@ -484,7 +484,7 @@ body {
 }
 .kusarigama_description {
     visibility: hidden;
-    top: 600px;
+    top: 650px;
     left: 600px;
 }
 .kusarigama_empty {
@@ -502,7 +502,7 @@ body {
 }
 .fists_description {
     visibility: hidden;
-    top: 750px;
+    top: 800px;
     left: 600px;
 }
 .fists_empty {
@@ -520,7 +520,7 @@ body {
 }
 .claws_description {
     visibility: hidden;
-    top: 900px;
+    top: 950px;
     left: 600px;
 }
 .claws_empty {
@@ -538,7 +538,7 @@ body {
 }
 .light_bows_description {
     visibility: hidden;
-    top: 150px;
+    top: 200px;
     left: 750px;
 }
 .light_bows_empty {
@@ -556,7 +556,7 @@ body {
 }
 .bows_description {
     visibility: hidden;
-    top: 300px;
+    top: 350px;
     left: 750px;
 }
 .bows_empty {
@@ -574,7 +574,7 @@ body {
 }
 .greatbows_description {
     visibility: hidden;
-    top: 450px;
+    top: 500px;
     left: 750px;
 }
 .greatbows_empty {
@@ -592,7 +592,7 @@ body {
 }
 .crossbows_description {
     visibility: hidden;
-    top: 600px;
+    top: 650px;
     left: 750px;
 }
 .crossbows_empty {
@@ -610,7 +610,7 @@ body {
 }
 .ballistas_description {
     visibility: hidden;
-    top: 750px;
+    top: 800px;
     left: 750px;
 }
 .ballistas_empty {
@@ -628,7 +628,7 @@ body {
 }
 .glintstone_staffs_description {
     visibility: hidden;
-    top: 900px;
+    top: 950px;
     left: 750px;
 }
 .glintstone_staffs_empty {
@@ -646,7 +646,7 @@ body {
 }
 .sacred_seals_description {
     visibility: hidden;
-    top: 150px;
+    top: 200px;
     left: 900px;
 }
 .sacred_seals_empty {
@@ -664,7 +664,7 @@ body {
 }
 .tools_description {
     visibility: hidden;
-    top: 300px;
+    top: 350px;
     left: 900px;
 }
 .tools_empty {
@@ -682,7 +682,7 @@ body {
 }
 .hand_guns_description {
     visibility: hidden;
-    top: 550px;
+    top: 600px;
     left: 900px;
 }
 .hand_guns_empty {
@@ -700,7 +700,7 @@ body {
 }
 .long_guns_description {
     visibility: hidden;
-    top: 600px;
+    top: 650px;
     left: 900px;
 }
 .long_guns_empty {
@@ -718,7 +718,7 @@ body {
 }
 .trick_weapons_description {
     visibility: hidden;
-    top: 750px;
+    top: 800px;
     left: 900px;
 }
 .trick_weapons_empty {

@@ -477,10 +477,8 @@ function gothrough_weapons(){
 };
 
 function showTitle(checkbox) {
-    // Vérifier si la checkbox des daggers est cochée
     if (checkbox.id === 'daggers_checkbox' && checkbox.checked) {
         document.querySelectorAll('.container_2 img').forEach(img => {
-            // Montrer les images liées aux daggers
             if (img.classList.contains('weapon_identifier_DS') || img.classList.contains('weapon_identifier_ER') || img.classList.contains('weapon_identifier_R')) {
                 img.style.visibility = 'visible';
             } else {
@@ -489,10 +487,338 @@ function showTitle(checkbox) {
         });
     }
 
-    // Vérifier si la checkbox des trick weapons est cochée
+    if (checkbox.id === 'straight_swords_checkbox' && checkbox.checked) {
+        document.querySelectorAll('.container_2 img').forEach(img => {
+            if (img.classList.contains('weapon_identifier_ER') || img.classList.contains('weapon_identifier_DS') || img.classList.contains('weapon_identifier_R') || img.classList.contains('weapon_identifier_B')) {
+                img.style.visibility = 'visible';
+            } else {
+                img.style.visibility = 'hidden';
+            }
+        });
+    }
+
+    if (checkbox.id === 'greatswords_checkbox' && checkbox.checked) {
+        document.querySelectorAll('.container_2 img').forEach(img => {
+            if (img.classList.contains('weapon_identifier_ER') || img.classList.contains('weapon_identifier_DS') || img.classList.contains('weapon_identifier_R') || img.classList.contains('weapon_identifier_B') || img.classList.contains('weapon_identifier_N')) {
+                img.style.visibility = 'visible';
+            } else {
+                img.style.visibility = 'hidden';
+            }
+        });
+    }
+    
+    if (checkbox.id === 'colossal_swords_checkbox' && checkbox.checked) {
+        document.querySelectorAll('.container_2 img').forEach(img => {
+            if (img.classList.contains('weapon_identifier_ER') || img.classList.contains('weapon_identifier_DS') || img.classList.contains('weapon_identifier_R')) {
+                img.style.visibility = 'visible';
+            } else {
+                img.style.visibility = 'hidden';
+            }
+        });
+    }
+    
+    if (checkbox.id === 'thrusting_swords_checkbox' && checkbox.checked) {
+        document.querySelectorAll('.container_2 img').forEach(img => {
+            if (img.classList.contains('weapon_identifier_ER') || img.classList.contains('weapon_identifier_DS')) {
+                img.style.visibility = 'visible';
+            } else {
+                img.style.visibility = 'hidden';
+            }
+        });
+    }
+    
+    if (checkbox.id === 'heavy_thrusting_swords_checkbox' && checkbox.checked) {
+        document.querySelectorAll('.container_2 img').forEach(img => {
+            if (img.classList.contains('weapon_identifier_ER') || img.classList.contains('weapon_identifier_DS')) {
+                img.style.visibility = 'visible';
+            } else {
+                img.style.visibility = 'hidden';
+            }
+        });
+    }
+    
+    if (checkbox.id === 'curved_swords_checkbox' && checkbox.checked) {
+        document.querySelectorAll('.container_2 img').forEach(img => {
+            if (img.classList.contains('weapon_identifier_ER') || img.classList.contains('weapon_identifier_DS')) {
+                img.style.visibility = 'visible';
+            } else {
+                img.style.visibility = 'hidden';
+            }
+        });
+    }
+    
+    if (checkbox.id === 'curved_greatswords_checkbox' && checkbox.checked) {
+        document.querySelectorAll('.container_2 img').forEach(img => {
+            if (img.classList.contains('weapon_identifier_ER') || img.classList.contains('weapon_identifier_DS')) {
+                img.style.visibility = 'visible';
+            } else {
+                img.style.visibility = 'hidden';
+            }
+        });
+    }
+    
+    if (checkbox.id === 'katanas_checkbox' && checkbox.checked) {
+        document.querySelectorAll('.container_2 img').forEach(img => {
+            if (img.classList.contains('weapon_identifier_ER') || img.classList.contains('weapon_identifier_DS') || img.classList.contains('weapon_identifier_S') || img.classList.contains('weapon_identifier_R') || img.classList.contains('weapon_identifier_B') || img.classList.contains('weapon_identifier_N')) {
+                img.style.visibility = 'visible';
+            } else {
+                img.style.visibility = 'hidden';
+            }
+        });
+    }
+    
+    if (checkbox.id === 'axe_checkbox' && checkbox.checked) {
+        document.querySelectorAll('.container_2 img').forEach(img => {
+            if (img.classList.contains('weapon_identifier_ER') || img.classList.contains('weapon_identifier_DS') || img.classList.contains('weapon_identifier_R') || img.classList.contains('weapon_identifier_B') || img.classList.contains('weapon_identifier_N')) {
+                img.style.visibility = 'visible';
+            } else {
+                img.style.visibility = 'hidden';
+            }
+        });
+    }
+    
+    if (checkbox.id === 'greataxes_checkbox' && checkbox.checked) {
+        document.querySelectorAll('.container_2 img').forEach(img => {
+            if (img.classList.contains('weapon_identifier_ER') || img.classList.contains('weapon_identifier_DS') || img.classList.contains('weapon_identifier_B')) {
+                img.style.visibility = 'visible';
+            } else {
+                img.style.visibility = 'hidden';
+            }
+        });
+    }
+    
+    if (checkbox.id === 'hammers_checkbox' && checkbox.checked) {
+        document.querySelectorAll('.container_2 img').forEach(img => {
+            if (img.classList.contains('weapon_identifier_ER') || img.classList.contains('weapon_identifier_DS') || img.classList.contains('weapon_identifier_R') || img.classList.contains('weapon_identifier_B')) {
+                img.style.visibility = 'visible';
+            } else {
+                img.style.visibility = 'hidden';
+            }
+        });
+    }
+    
+    if (checkbox.id === 'flails_checkbox' && checkbox.checked) {
+        document.querySelectorAll('.container_2 img').forEach(img => {
+            if (img.classList.contains('weapon_identifier_ER') || img.classList.contains('weapon_identifier_DS') || img.classList.contains('weapon_identifier_R')) {
+                img.style.visibility = 'visible';
+            } else {
+                img.style.visibility = 'hidden';
+            }
+        });
+    }
+    
+    if (checkbox.id === 'great_hammers_checkbox' && checkbox.checked) {
+        document.querySelectorAll('.container_2 img').forEach(img => {
+            if (img.classList.contains('weapon_identifier_ER') || img.classList.contains('weapon_identifier_DS') || img.classList.contains('weapon_identifier_R') || img.classList.contains('weapon_identifier_B')) {
+                img.style.visibility = 'visible';
+            } else {
+                img.style.visibility = 'hidden';
+            }
+        });
+    }
+    
+    if (checkbox.id === 'colossal_weapons_checkbox' && checkbox.checked) {
+        document.querySelectorAll('.container_2 img').forEach(img => {
+            if (img.classList.contains('weapon_identifier_ER') || img.classList.contains('weapon_identifier_B')) {
+                img.style.visibility = 'visible';
+            } else {
+                img.style.visibility = 'hidden';
+            }
+        });
+    }
+    
+    if (checkbox.id === 'spears_checkbox' && checkbox.checked) {
+        document.querySelectorAll('.container_2 img').forEach(img => {
+            if (img.classList.contains('weapon_identifier_ER') || img.classList.contains('weapon_identifier_DS') || img.classList.contains('weapon_identifier_R') || img.classList.contains('weapon_identifier_B') || img.classList.contains('weapon_identifier_N')) {
+                img.style.visibility = 'visible';
+            } else {
+                img.style.visibility = 'hidden';
+            }
+        });
+    }
+    
+    if (checkbox.id === 'great_spears_checkbox' && checkbox.checked) {
+        document.querySelectorAll('.container_2 img').forEach(img => {
+            if (img.classList.contains('weapon_identifier_ER')) {
+                img.style.visibility = 'visible';
+            } else {
+                img.style.visibility = 'hidden';
+            }
+        });
+    }
+    
+    if (checkbox.id === 'halberds_checkbox' && checkbox.checked) {
+        document.querySelectorAll('.container_2 img').forEach(img => {
+            if (img.classList.contains('weapon_identifier_ER') || img.classList.contains('weapon_identifier_DS')) {
+                img.style.visibility = 'visible';
+            } else {
+                img.style.visibility = 'hidden';
+            }
+        });
+    }
+    
+    if (checkbox.id === 'reapers_checkbox' && checkbox.checked) {
+        document.querySelectorAll('.container_2 img').forEach(img => {
+            if (img.classList.contains('weapon_identifier_ER') || img.classList.contains('weapon_identifier_DS') || img.classList.contains('weapon_identifier_R')) {
+                img.style.visibility = 'visible';
+            } else {
+                img.style.visibility = 'hidden';
+            }
+        });
+    }
+    
+    if (checkbox.id === 'whips_checkbox' && checkbox.checked) {
+        document.querySelectorAll('.container_2 img').forEach(img => {
+            if (img.classList.contains('weapon_identifier_ER') || img.classList.contains('weapon_identifier_DS')) {
+                img.style.visibility = 'visible';
+            } else {
+                img.style.visibility = 'hidden';
+            }
+        });
+    }
+    
+    if (checkbox.id === 'kusarigama_checkbox' && checkbox.checked) {
+        document.querySelectorAll('.container_2 img').forEach(img => {
+            if (img.classList.contains('weapon_identifier_N')) {
+                img.style.visibility = 'visible';
+            } else {
+                img.style.visibility = 'hidden';
+            }
+        });
+    }
+    
+    if (checkbox.id === 'fists_checkbox' && checkbox.checked) {
+        document.querySelectorAll('.container_2 img').forEach(img => {
+            if (img.classList.contains('weapon_identifier_ER') || img.classList.contains('weapon_identifier_DS') || img.classList.contains('weapon_identifier_R') || img.classList.contains('weapon_identifier_N')) {
+                img.style.visibility = 'visible';
+            } else {
+                img.style.visibility = 'hidden';
+            }
+        });
+    }
+    
+    if (checkbox.id === 'claws_checkbox' && checkbox.checked) {
+        document.querySelectorAll('.container_2 img').forEach(img => {
+            if (img.classList.contains('weapon_identifier_ER') || img.classList.contains('weapon_identifier_DS') || img.classList.contains('weapon_identifier_R') || img.classList.contains('weapon_identifier_B')) {
+                img.style.visibility = 'visible';
+            } else {
+                img.style.visibility = 'hidden';
+            }
+        });
+    }
+    
+    if (checkbox.id === 'light_bows_checkbox' && checkbox.checked) {
+        document.querySelectorAll('.container_2 img').forEach(img => {
+            if (img.classList.contains('weapon_identifier_ER')) {
+                img.style.visibility = 'visible';
+            } else {
+                img.style.visibility = 'hidden';
+            }
+        });
+    }
+    
+    if (checkbox.id === 'bows_checkbox' && checkbox.checked) {
+        document.querySelectorAll('.container_2 img').forEach(img => {
+            if (img.classList.contains('weapon_identifier_ER') || img.classList.contains('weapon_identifier_DS') || img.classList.contains('weapon_identifier_R') || img.classList.contains('weapon_identifier_N')) {
+                img.style.visibility = 'visible';
+            } else {
+                img.style.visibility = 'hidden';
+            }
+        });
+    }
+    
+    if (checkbox.id === 'greatbows_checkbox' && checkbox.checked) {
+        document.querySelectorAll('.container_2 img').forEach(img => {
+            if (img.classList.contains('weapon_identifier_ER') || img.classList.contains('weapon_identifier_DS') || img.classList.contains('weapon_identifier_R')) {
+                img.style.visibility = 'visible';
+            } else {
+                img.style.visibility = 'hidden';
+            }
+        });
+    }
+    
+    if (checkbox.id === 'crossbows_checkbox' && checkbox.checked) {
+        document.querySelectorAll('.container_2 img').forEach(img => {
+            if (img.classList.contains('weapon_identifier_ER') || img.classList.contains('weapon_identifier_DS') || img.classList.contains('weapon_identifier_R')) {
+                img.style.visibility = 'visible';
+            } else {
+                img.style.visibility = 'hidden';
+            }
+        });
+    }
+    
+    if (checkbox.id === 'ballistas_checkbox' && checkbox.checked) {
+        document.querySelectorAll('.container_2 img').forEach(img => {
+            if (img.classList.contains('weapon_identifier_ER') || img.classList.contains('weapon_identifier_N')) {
+                img.style.visibility = 'visible';
+            } else {
+                img.style.visibility = 'hidden';
+            }
+        });
+    }
+    
+    if (checkbox.id === 'glintstone_staffs_checkbox' && checkbox.checked) {
+        document.querySelectorAll('.container_2 img').forEach(img => {
+            if (img.classList.contains('weapon_identifier_ER') || img.classList.contains('weapon_identifier_DS') || img.classList.contains('weapon_identifier_R')) {
+                img.style.visibility = 'visible';
+            } else {
+                img.style.visibility = 'hidden';
+            }
+        });
+    }
+    
+    if (checkbox.id === 'sacred_seals_checkbox' && checkbox.checked) {
+        document.querySelectorAll('.container_2 img').forEach(img => {
+            if (img.classList.contains('weapon_identifier_ER')) {
+                img.style.visibility = 'visible';
+            } else {
+                img.style.visibility = 'hidden';
+            }
+        });
+    }
+    
+    if (checkbox.id === 'tools_checkbox' && checkbox.checked) {
+        document.querySelectorAll('.container_2 img').forEach(img => {
+            if (img.classList.contains('weapon_identifier_ER') || img.classList.contains('weapon_identifier_DS') || img.classList.contains('weapon_identifier_S') || img.classList.contains('weapon_identifier_B')) {
+                img.style.visibility = 'visible';
+            } else {
+                img.style.visibility = 'hidden';
+            }
+        });
+    }
+    
+    if (checkbox.id === 'hand_guns_checkbox' && checkbox.checked) {
+        document.querySelectorAll('.container_2 img').forEach(img => {
+            if (img.classList.contains('weapon_identifier_R')) {
+                img.style.visibility = 'visible';
+            } else {
+                img.style.visibility = 'hidden';
+            }
+        });
+    }
+    
+    if (checkbox.id === 'long_guns_checkbox' && checkbox.checked) {
+        document.querySelectorAll('.container_2 img').forEach(img => {
+            if (img.classList.contains('weapon_identifier_R') || img.classList.contains('weapon_identifier_N')) {
+                img.style.visibility = 'visible';
+            } else {
+                img.style.visibility = 'hidden';
+            }
+        });
+    }
+    
     if (checkbox.id === 'trick_weapons_checkbox' && checkbox.checked) {
         document.querySelectorAll('.container_2 img').forEach(img => {
-            // Montrer l'image de Bloodborne
+            if (img.classList.contains('weapon_identifier_B')) {
+                img.style.visibility = 'visible';
+            } else {
+                img.style.visibility = 'hidden';
+            }
+        });
+    }
+
+    if (checkbox.id === 'trick_weapons_checkbox' && checkbox.checked) {
+        document.querySelectorAll('.container_2 img').forEach(img => {
             if (img.classList.contains('weapon_identifier_B')) {
                 img.style.visibility = 'visible';
             } else {
