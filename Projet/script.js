@@ -855,7 +855,7 @@ function showTitle(checkbox) {
         document.querySelectorAll('.container_2 img').forEach(img => {
             if (img.classList.contains('weapon_identifier_B')) {
                 img.style.visibility = 'visible';
-                document.getElementById(`shadow_daggers`).style.boxShadow = "0 0 10px #9ecaed";
+                document.getElementById(`shadow_trick_weapons`).style.boxShadow = "0 0 10px #9ecaed";
             } else {
                 img.style.visibility = 'hidden';
             }
@@ -874,6 +874,7 @@ function showTitle(checkbox) {
             document.getElementById(`shadow_heavy_thrusting_swords`).style.boxShadow = "None";
             document.getElementById(`shadow_curved_swords`).style.boxShadow = "None";
             document.getElementById(`shadow_curved_greatswords`).style.boxShadow = "None";
+            document.getElementById(`shadow_katanas`).style.boxShadow = "None";
             document.getElementById(`shadow_twinblades`).style.boxShadow = "None";
             document.getElementById(`shadow_axes`).style.boxShadow = "None";
             document.getElementById(`shadow_greataxes`).style.boxShadow = "None";
@@ -884,6 +885,7 @@ function showTitle(checkbox) {
             document.getElementById(`shadow_spears`).style.boxShadow = "None";
             document.getElementById(`shadow_great_spears`).style.boxShadow = "None";
             document.getElementById(`shadow_halberds`).style.boxShadow = "None";
+            document.getElementById(`shadow_reapers`).style.boxShadow = "None";
             document.getElementById(`shadow_whips`).style.boxShadow = "None";
             document.getElementById(`shadow_kusarigama`).style.boxShadow = "None";
             document.getElementById(`shadow_fists`).style.boxShadow = "None";
