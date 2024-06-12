@@ -481,6 +481,7 @@ function showTitle(checkbox) {
         document.querySelectorAll('.container_2 img').forEach(img => {
             if (img.classList.contains('weapon_identifier_DS') || img.classList.contains('weapon_identifier_ER') || img.classList.contains('weapon_identifier_R')) {
                 img.style.visibility = 'visible';
+                document.getElementById(`shadow_daggers`).style.boxShadow = "0 0 10px #9ecaed";
             } else {
                 img.style.visibility = 'hidden';
             }
@@ -491,6 +492,7 @@ function showTitle(checkbox) {
         document.querySelectorAll('.container_2 img').forEach(img => {
             if (img.classList.contains('weapon_identifier_ER') || img.classList.contains('weapon_identifier_DS') || img.classList.contains('weapon_identifier_R') || img.classList.contains('weapon_identifier_B')) {
                 img.style.visibility = 'visible';
+                document.getElementById(`shadow_straight_swords`).style.boxShadow = "0 0 10px #9ecaed";
             } else {
                 img.style.visibility = 'hidden';
             }
@@ -501,6 +503,7 @@ function showTitle(checkbox) {
         document.querySelectorAll('.container_2 img').forEach(img => {
             if (img.classList.contains('weapon_identifier_ER') || img.classList.contains('weapon_identifier_DS') || img.classList.contains('weapon_identifier_R') || img.classList.contains('weapon_identifier_B') || img.classList.contains('weapon_identifier_N')) {
                 img.style.visibility = 'visible';
+                document.getElementById(`shadow_greatswords`).style.boxShadow = "0 0 10px #9ecaed";
             } else {
                 img.style.visibility = 'hidden';
             }
@@ -511,6 +514,7 @@ function showTitle(checkbox) {
         document.querySelectorAll('.container_2 img').forEach(img => {
             if (img.classList.contains('weapon_identifier_ER') || img.classList.contains('weapon_identifier_DS') || img.classList.contains('weapon_identifier_R')) {
                 img.style.visibility = 'visible';
+                document.getElementById(`shadow_colossal_swords`).style.boxShadow = "0 0 10px #9ecaed";
             } else {
                 img.style.visibility = 'hidden';
             }
@@ -521,6 +525,7 @@ function showTitle(checkbox) {
         document.querySelectorAll('.container_2 img').forEach(img => {
             if (img.classList.contains('weapon_identifier_ER') || img.classList.contains('weapon_identifier_DS')) {
                 img.style.visibility = 'visible';
+                document.getElementById(`shadow_thrusting_swords`).style.boxShadow = "0 0 10px #9ecaed";
             } else {
                 img.style.visibility = 'hidden';
             }
@@ -531,6 +536,7 @@ function showTitle(checkbox) {
         document.querySelectorAll('.container_2 img').forEach(img => {
             if (img.classList.contains('weapon_identifier_ER') || img.classList.contains('weapon_identifier_DS')) {
                 img.style.visibility = 'visible';
+                document.getElementById(`shadow_heavy_thrusting_swords`).style.boxShadow = "0 0 10px #9ecaed";
             } else {
                 img.style.visibility = 'hidden';
             }
@@ -541,6 +547,7 @@ function showTitle(checkbox) {
         document.querySelectorAll('.container_2 img').forEach(img => {
             if (img.classList.contains('weapon_identifier_ER') || img.classList.contains('weapon_identifier_DS')) {
                 img.style.visibility = 'visible';
+                document.getElementById(`shadow_curved_swords`).style.boxShadow = "0 0 10px #9ecaed";
             } else {
                 img.style.visibility = 'hidden';
             }
@@ -551,6 +558,7 @@ function showTitle(checkbox) {
         document.querySelectorAll('.container_2 img').forEach(img => {
             if (img.classList.contains('weapon_identifier_ER') || img.classList.contains('weapon_identifier_DS')) {
                 img.style.visibility = 'visible';
+                document.getElementById(`shadow_curved_greatswords`).style.boxShadow = "0 0 10px #9ecaed";
             } else {
                 img.style.visibility = 'hidden';
             }
@@ -561,6 +569,7 @@ function showTitle(checkbox) {
         document.querySelectorAll('.container_2 img').forEach(img => {
             if (img.classList.contains('weapon_identifier_ER') || img.classList.contains('weapon_identifier_DS') || img.classList.contains('weapon_identifier_S') || img.classList.contains('weapon_identifier_R') || img.classList.contains('weapon_identifier_B') || img.classList.contains('weapon_identifier_N')) {
                 img.style.visibility = 'visible';
+                document.getElementById(`shadow_katanas`).style.boxShadow = "0 0 10px #9ecaed";
             } else {
                 img.style.visibility = 'hidden';
             }
@@ -571,6 +580,7 @@ function showTitle(checkbox) {
         document.querySelectorAll('.container_2 img').forEach(img => {
             if (img.classList.contains('weapon_identifier_ER') || img.classList.contains('weapon_identifier_DS') || img.classList.contains('weapon_identifier_R') || img.classList.contains('weapon_identifier_B') || img.classList.contains('weapon_identifier_N')) {
                 img.style.visibility = 'visible';
+                document.getElementById(`shadow_axes`).style.boxShadow = "0 0 10px #9ecaed";
             } else {
                 img.style.visibility = 'hidden';
             }
@@ -581,6 +591,7 @@ function showTitle(checkbox) {
         document.querySelectorAll('.container_2 img').forEach(img => {
             if (img.classList.contains('weapon_identifier_ER') || img.classList.contains('weapon_identifier_DS') || img.classList.contains('weapon_identifier_B')) {
                 img.style.visibility = 'visible';
+                document.getElementById(`shadow_greataxes`).style.boxShadow = "0 0 10px #9ecaed";
             } else {
                 img.style.visibility = 'hidden';
             }
@@ -591,6 +602,7 @@ function showTitle(checkbox) {
         document.querySelectorAll('.container_2 img').forEach(img => {
             if (img.classList.contains('weapon_identifier_ER') || img.classList.contains('weapon_identifier_DS') || img.classList.contains('weapon_identifier_R') || img.classList.contains('weapon_identifier_B')) {
                 img.style.visibility = 'visible';
+                document.getElementById(`shadow_hammers`).style.boxShadow = "0 0 10px #9ecaed";
             } else {
                 img.style.visibility = 'hidden';
             }
@@ -601,6 +613,7 @@ function showTitle(checkbox) {
         document.querySelectorAll('.container_2 img').forEach(img => {
             if (img.classList.contains('weapon_identifier_ER') || img.classList.contains('weapon_identifier_DS') || img.classList.contains('weapon_identifier_R')) {
                 img.style.visibility = 'visible';
+                document.getElementById(`shadow_flails`).style.boxShadow = "0 0 10px #9ecaed";
             } else {
                 img.style.visibility = 'hidden';
             }
@@ -611,6 +624,7 @@ function showTitle(checkbox) {
         document.querySelectorAll('.container_2 img').forEach(img => {
             if (img.classList.contains('weapon_identifier_ER') || img.classList.contains('weapon_identifier_DS') || img.classList.contains('weapon_identifier_R') || img.classList.contains('weapon_identifier_B')) {
                 img.style.visibility = 'visible';
+                document.getElementById(`shadow_great_hammers`).style.boxShadow = "0 0 10px #9ecaed";
             } else {
                 img.style.visibility = 'hidden';
             }
@@ -621,6 +635,7 @@ function showTitle(checkbox) {
         document.querySelectorAll('.container_2 img').forEach(img => {
             if (img.classList.contains('weapon_identifier_ER') || img.classList.contains('weapon_identifier_B')) {
                 img.style.visibility = 'visible';
+                document.getElementById(`shadow_colossal_weapons`).style.boxShadow = "0 0 10px #9ecaed";
             } else {
                 img.style.visibility = 'hidden';
             }
@@ -631,6 +646,7 @@ function showTitle(checkbox) {
         document.querySelectorAll('.container_2 img').forEach(img => {
             if (img.classList.contains('weapon_identifier_ER') || img.classList.contains('weapon_identifier_DS') || img.classList.contains('weapon_identifier_R') || img.classList.contains('weapon_identifier_B') || img.classList.contains('weapon_identifier_N')) {
                 img.style.visibility = 'visible';
+                document.getElementById(`shadow_spears`).style.boxShadow = "0 0 10px #9ecaed";
             } else {
                 img.style.visibility = 'hidden';
             }
@@ -641,6 +657,7 @@ function showTitle(checkbox) {
         document.querySelectorAll('.container_2 img').forEach(img => {
             if (img.classList.contains('weapon_identifier_ER')) {
                 img.style.visibility = 'visible';
+                document.getElementById(`shadow_great_spears`).style.boxShadow = "0 0 10px #9ecaed";
             } else {
                 img.style.visibility = 'hidden';
             }
@@ -651,6 +668,7 @@ function showTitle(checkbox) {
         document.querySelectorAll('.container_2 img').forEach(img => {
             if (img.classList.contains('weapon_identifier_ER') || img.classList.contains('weapon_identifier_DS')) {
                 img.style.visibility = 'visible';
+                document.getElementById(`shadow_halberds`).style.boxShadow = "0 0 10px #9ecaed";
             } else {
                 img.style.visibility = 'hidden';
             }
@@ -661,6 +679,7 @@ function showTitle(checkbox) {
         document.querySelectorAll('.container_2 img').forEach(img => {
             if (img.classList.contains('weapon_identifier_ER') || img.classList.contains('weapon_identifier_DS') || img.classList.contains('weapon_identifier_R')) {
                 img.style.visibility = 'visible';
+                document.getElementById(`shadow_reapers`).style.boxShadow = "0 0 10px #9ecaed";
             } else {
                 img.style.visibility = 'hidden';
             }
@@ -671,6 +690,7 @@ function showTitle(checkbox) {
         document.querySelectorAll('.container_2 img').forEach(img => {
             if (img.classList.contains('weapon_identifier_ER') || img.classList.contains('weapon_identifier_DS')) {
                 img.style.visibility = 'visible';
+                document.getElementById(`shadow_whips`).style.boxShadow = "0 0 10px #9ecaed";
             } else {
                 img.style.visibility = 'hidden';
             }
@@ -681,6 +701,7 @@ function showTitle(checkbox) {
         document.querySelectorAll('.container_2 img').forEach(img => {
             if (img.classList.contains('weapon_identifier_N')) {
                 img.style.visibility = 'visible';
+                document.getElementById(`shadow_kusarigama`).style.boxShadow = "0 0 10px #9ecaed";
             } else {
                 img.style.visibility = 'hidden';
             }
@@ -691,6 +712,7 @@ function showTitle(checkbox) {
         document.querySelectorAll('.container_2 img').forEach(img => {
             if (img.classList.contains('weapon_identifier_ER') || img.classList.contains('weapon_identifier_DS') || img.classList.contains('weapon_identifier_R') || img.classList.contains('weapon_identifier_N')) {
                 img.style.visibility = 'visible';
+                document.getElementById(`shadow_fists`).style.boxShadow = "0 0 10px #9ecaed";
             } else {
                 img.style.visibility = 'hidden';
             }
@@ -701,6 +723,7 @@ function showTitle(checkbox) {
         document.querySelectorAll('.container_2 img').forEach(img => {
             if (img.classList.contains('weapon_identifier_ER') || img.classList.contains('weapon_identifier_DS') || img.classList.contains('weapon_identifier_R') || img.classList.contains('weapon_identifier_B')) {
                 img.style.visibility = 'visible';
+                document.getElementById(`shadow_claws`).style.boxShadow = "0 0 10px #9ecaed";
             } else {
                 img.style.visibility = 'hidden';
             }
@@ -711,6 +734,7 @@ function showTitle(checkbox) {
         document.querySelectorAll('.container_2 img').forEach(img => {
             if (img.classList.contains('weapon_identifier_ER')) {
                 img.style.visibility = 'visible';
+                document.getElementById(`shadow_light_bows`).style.boxShadow = "0 0 10px #9ecaed";
             } else {
                 img.style.visibility = 'hidden';
             }
@@ -721,6 +745,7 @@ function showTitle(checkbox) {
         document.querySelectorAll('.container_2 img').forEach(img => {
             if (img.classList.contains('weapon_identifier_ER') || img.classList.contains('weapon_identifier_DS') || img.classList.contains('weapon_identifier_R') || img.classList.contains('weapon_identifier_N')) {
                 img.style.visibility = 'visible';
+                document.getElementById(`shadow_bows`).style.boxShadow = "0 0 10px #9ecaed";
             } else {
                 img.style.visibility = 'hidden';
             }
@@ -731,6 +756,7 @@ function showTitle(checkbox) {
         document.querySelectorAll('.container_2 img').forEach(img => {
             if (img.classList.contains('weapon_identifier_ER') || img.classList.contains('weapon_identifier_DS') || img.classList.contains('weapon_identifier_R')) {
                 img.style.visibility = 'visible';
+                document.getElementById(`shadow_greatbows`).style.boxShadow = "0 0 10px #9ecaed";
             } else {
                 img.style.visibility = 'hidden';
             }
@@ -741,6 +767,7 @@ function showTitle(checkbox) {
         document.querySelectorAll('.container_2 img').forEach(img => {
             if (img.classList.contains('weapon_identifier_ER') || img.classList.contains('weapon_identifier_DS') || img.classList.contains('weapon_identifier_R')) {
                 img.style.visibility = 'visible';
+                document.getElementById(`shadow_crossbows`).style.boxShadow = "0 0 10px #9ecaed";
             } else {
                 img.style.visibility = 'hidden';
             }
@@ -751,6 +778,7 @@ function showTitle(checkbox) {
         document.querySelectorAll('.container_2 img').forEach(img => {
             if (img.classList.contains('weapon_identifier_ER') || img.classList.contains('weapon_identifier_N')) {
                 img.style.visibility = 'visible';
+                document.getElementById(`shadow_ballistas`).style.boxShadow = "0 0 10px #9ecaed";
             } else {
                 img.style.visibility = 'hidden';
             }
@@ -761,6 +789,7 @@ function showTitle(checkbox) {
         document.querySelectorAll('.container_2 img').forEach(img => {
             if (img.classList.contains('weapon_identifier_ER') || img.classList.contains('weapon_identifier_DS') || img.classList.contains('weapon_identifier_R')) {
                 img.style.visibility = 'visible';
+                document.getElementById(`shadow_glintstone_staffs`).style.boxShadow = "0 0 10px #9ecaed";
             } else {
                 img.style.visibility = 'hidden';
             }
@@ -771,6 +800,7 @@ function showTitle(checkbox) {
         document.querySelectorAll('.container_2 img').forEach(img => {
             if (img.classList.contains('weapon_identifier_ER')) {
                 img.style.visibility = 'visible';
+                document.getElementById(`shadow_sacred_seals`).style.boxShadow = "0 0 10px #9ecaed";
             } else {
                 img.style.visibility = 'hidden';
             }
@@ -781,6 +811,7 @@ function showTitle(checkbox) {
         document.querySelectorAll('.container_2 img').forEach(img => {
             if (img.classList.contains('weapon_identifier_ER') || img.classList.contains('weapon_identifier_DS') || img.classList.contains('weapon_identifier_S') || img.classList.contains('weapon_identifier_B')) {
                 img.style.visibility = 'visible';
+                document.getElementById(`shadow_tools`).style.boxShadow = "0 0 10px #9ecaed";
             } else {
                 img.style.visibility = 'hidden';
             }
@@ -791,6 +822,7 @@ function showTitle(checkbox) {
         document.querySelectorAll('.container_2 img').forEach(img => {
             if (img.classList.contains('weapon_identifier_R')) {
                 img.style.visibility = 'visible';
+                document.getElementById(`shadow_hand_guns`).style.boxShadow = "0 0 10px #9ecaed";
             } else {
                 img.style.visibility = 'hidden';
             }
@@ -801,16 +833,18 @@ function showTitle(checkbox) {
         document.querySelectorAll('.container_2 img').forEach(img => {
             if (img.classList.contains('weapon_identifier_R') || img.classList.contains('weapon_identifier_N')) {
                 img.style.visibility = 'visible';
+                document.getElementById(`shadow_long_guns`).style.boxShadow = "0 0 10px #9ecaed";
             } else {
                 img.style.visibility = 'hidden';
             }
         });
     }
     
-    if (checkbox.id === 'trick_weapons_checkbox' && checkbox.checked) {
+    if (checkbox.id === 'twinblades_checkbox' && checkbox.checked) {
         document.querySelectorAll('.container_2 img').forEach(img => {
             if (img.classList.contains('weapon_identifier_B')) {
                 img.style.visibility = 'visible';
+                document.getElementById(`shadow_twinblades`).style.boxShadow = "0 0 10px #9ecaed";
             } else {
                 img.style.visibility = 'hidden';
             }
@@ -821,16 +855,50 @@ function showTitle(checkbox) {
         document.querySelectorAll('.container_2 img').forEach(img => {
             if (img.classList.contains('weapon_identifier_B')) {
                 img.style.visibility = 'visible';
+                document.getElementById(`shadow_daggers`).style.boxShadow = "0 0 10px #9ecaed";
             } else {
                 img.style.visibility = 'hidden';
             }
         });
     }
 
-    // Si aucune checkbox n'est cochée, montrer toutes les images
+    // Si aucune checkbox n'est cochée, montrer toutes les images et enlever les highlights
     if (!checkbox.checked) {
         document.querySelectorAll('.container_2 img').forEach(img => {
             img.style.visibility = 'visible';
+            document.getElementById(`shadow_daggers`).style.boxShadow = "None";
+            document.getElementById(`shadow_straight_swords`).style.boxShadow = "None";
+            document.getElementById(`shadow_greatswords`).style.boxShadow = "None";
+            document.getElementById(`shadow_colossal_swords`).style.boxShadow = "None";
+            document.getElementById(`shadow_thrusting_swords`).style.boxShadow = "None";
+            document.getElementById(`shadow_heavy_thrusting_swords`).style.boxShadow = "None";
+            document.getElementById(`shadow_curved_swords`).style.boxShadow = "None";
+            document.getElementById(`shadow_curved_greatswords`).style.boxShadow = "None";
+            document.getElementById(`shadow_twinblades`).style.boxShadow = "None";
+            document.getElementById(`shadow_axes`).style.boxShadow = "None";
+            document.getElementById(`shadow_greataxes`).style.boxShadow = "None";
+            document.getElementById(`shadow_hammers`).style.boxShadow = "None";
+            document.getElementById(`shadow_flails`).style.boxShadow = "None";
+            document.getElementById(`shadow_great_hammers`).style.boxShadow = "None";
+            document.getElementById(`shadow_colossal_weapons`).style.boxShadow = "None";
+            document.getElementById(`shadow_spears`).style.boxShadow = "None";
+            document.getElementById(`shadow_great_spears`).style.boxShadow = "None";
+            document.getElementById(`shadow_halberds`).style.boxShadow = "None";
+            document.getElementById(`shadow_whips`).style.boxShadow = "None";
+            document.getElementById(`shadow_kusarigama`).style.boxShadow = "None";
+            document.getElementById(`shadow_fists`).style.boxShadow = "None";
+            document.getElementById(`shadow_claws`).style.boxShadow = "None";
+            document.getElementById(`shadow_light_bows`).style.boxShadow = "None";
+            document.getElementById(`shadow_bows`).style.boxShadow = "None";
+            document.getElementById(`shadow_greatbows`).style.boxShadow = "None";
+            document.getElementById(`shadow_crossbows`).style.boxShadow = "None";
+            document.getElementById(`shadow_ballistas`).style.boxShadow = "None";
+            document.getElementById(`shadow_glintstone_staffs`).style.boxShadow = "None";
+            document.getElementById(`shadow_sacred_seals`).style.boxShadow = "None";
+            document.getElementById(`shadow_tools`).style.boxShadow = "None";
+            document.getElementById(`shadow_hand_guns`).style.boxShadow = "None";
+            document.getElementById(`shadow_long_guns`).style.boxShadow = "None";
+            document.getElementById(`shadow_trick_weapons`).style.boxShadow = "None";
         });
     }
 }
