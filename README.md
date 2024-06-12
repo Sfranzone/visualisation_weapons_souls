@@ -13,9 +13,7 @@ Ces jeux sont les suivants:
 - Remnant II
 
 ## L'idée
-Cette visualisation illustre la fréquence de chaque type d'arme dans différents souls-like. Cliquez sur le(s) jeu(x) de votre choix pour les inclure dans le calcul (un contour vert confirme la sélection). Survolez les armes pour obtenir une brève description et accéder au pourcentage actuel.
-
-Bonne exploration!
+Notre objectif est de produire une visualisation la fréquence de chaque type d'arme dans différents souls-like. Cela permet d'observer quels jeux possèdent le plus d'armes dans X ou Y catégories vis-à-vis des autres jeux. Pour s'y retrouver, la visualisation permet également de sélectionner une arme pour avoir la référence de tous les jeux la mettant à disposition des joueurs. Des descriptions de chaque sont également disponible en les survolant avec un curseur.
 
 ## Tester notre projet
 Votre première étape consiste à cloner notre git. Une fois effectuer, vous lancez le projet sur votre navigateur, en utilisant par exemple la fonctionnalité "Go Live" de l'éditeur Visual Studio Code.
