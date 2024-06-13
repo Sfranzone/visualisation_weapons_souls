@@ -667,6 +667,7 @@ function pos_div_descr() {
         if (w != "toutes_armes" && w != "rien") {
             weapon.style.position = "absolute";
             weapon.style.top = `${top_pos}px`;
+            weapon.style.left = `${left_pos}px`;
             compteur++;
             console.log(compteur);
         };
