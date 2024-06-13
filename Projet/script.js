@@ -641,7 +641,27 @@ function showTitle(checkbox) {
             img.style.visibility = 'visible';
         });
         document.querySelectorAll('[id^=shadow_]').forEach(shadow => {
-            shadow.style.boxShadow = 'none';
+            shadow.style.boxShadow = 'None';
         });
     }
 }
+
+
+function pos_div_descr() {
+    let top_pos = 0;
+    let left_pos = 0;
+    
+    for (let w in weaponData) {
+        let weapon = document.getElementById(`${w}_descr`);
+        console.log(weapon);
+        top_pos += 150;
+        left_pos += 150;
+        if (w != "toutes_armes" && w != "rien") {
+            weapon.style.position = "absolute";
+            weapon.style.top = `${top_pos}px`;
+            //weapon.style.left = `${left_pos}px`;
+        };
+    }
+};
+
+pos_div_descr();
