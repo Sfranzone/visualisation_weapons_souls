@@ -620,11 +620,30 @@ const checkboxData = {
 };
 
 function showTitle(checkbox) {
-    if (!checkbox.checked) return;
-    
+    // Désactiver toutes les autres checkboxes
+    document.querySelectorAll('input[type="checkbox"]').forEach(cb => {
+        if (cb !== checkbox) {
+            cb.checked = false;
+        }
+    });
+
+    // Supprimer les ombres de tous les éléments correspondants
+    document.querySelectorAll('[id^=shadow_]').forEach(shadow => {
+        shadow.style.boxShadow = 'none';
+    });
+
+    // Si la checkbox actuelle n'est pas cochée, arrêter ici
+    if (!checkbox.checked) {
+        document.querySelectorAll('.container_2 img').forEach(img => {
+            img.style.visibility = 'visible';
+        });
+        return;
+    }
+
     const data = checkboxData[checkbox.id];
     if (!data) return;
 
+    // Afficher/Masquer les images selon la checkbox actuelle
     document.querySelectorAll('.container_2 img').forEach(img => {
         if (data.visibleClasses.some(cls => img.classList.contains(cls))) {
             img.style.visibility = 'visible';
@@ -633,19 +652,9 @@ function showTitle(checkbox) {
         }
     });
 
+    // Ajouter une ombre à l'élément correspondant
     document.getElementById(data.shadowId).style.boxShadow = "0 0 10px #9ecaed";
-
-    // Si aucune checkbox n'est cochée, montrer toutes les images et enlever les highlights
-    if (!checkbox.checked) {
-        document.querySelectorAll('.container_2 img').forEach(img => {
-            img.style.visibility = 'visible';
-        });
-        document.querySelectorAll('[id^=shadow_]').forEach(shadow => {
-            shadow.style.boxShadow = 'None';
-        });
-    }
 }
-
 
 function pos_div_descr() {
     let top_pos = 0;
