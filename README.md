@@ -13,7 +13,10 @@ Ces jeux sont les suivants:
 - Remnant II
 
 ## L'idée
-Notre objectif est de produire une visualisation la fréquence de chaque type d'arme dans différents souls-like. Cela permet d'observer quels jeux possèdent le plus d'armes dans X ou Y catégories vis-à-vis des autres jeux. Pour s'y retrouver, la visualisation permet également de sélectionner une arme pour avoir la référence de tous les jeux la mettant à disposition des joueurs. Des descriptions de chaque sont également disponible en les survolant avec un curseur.
+
+![Main logo](./Projet/other/vd_souls_look.PNG)
+
+Notre objectif est de produire une visualisation la fréquence de chaque type d'arme dans différents souls-like. Cela permet d'observer quels jeux possèdent le plus d'armes dans X ou Y catégories vis-à-vis des autres jeux. Pour s'y retrouver, la visualisation permet également de sélectionner une arme pour avoir la référence de tous les jeux la mettant à disposition des joueurs. Des descriptions de chaque arme sont également disponible en les survolant avec un curseur.
 
 ## Tester notre projet
 Votre première étape consiste à cloner notre git. Une fois effectuer, vous lancez le projet sur votre navigateur, en utilisant par exemple la fonctionnalité "Go Live" de l'éditeur Visual Studio Code.
