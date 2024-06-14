@@ -658,7 +658,7 @@ function showTitle(checkbox) {
 
 function pos_div_descr() {
     let top_pos = 0;
-    let left_pos = -15;
+    let left_pos = -45;
     compteur = 0;
     
     for (let w in weaponData) {
@@ -668,15 +668,16 @@ function pos_div_descr() {
             weapon.style.position = "absolute";
             weapon.style.top = `${top_pos}px`;
             weapon.style.left = `${left_pos}px`;
-            weapon.style.fontSize = `25px`;
+            weapon.style.fontSize = `18px`;
             weapon.style.color = `#B87333`;
             weapon.style.fontFamily = "Lucida Console", "Courier New";
             weapon.style.textAlignLast = "justify";
             weapon.style.textShadow = "0px 2px 5px orange";
+            weapon.style.zIndex = 3;
             compteur++;
             console.log(compteur);
             if ((compteur-1) % 6 == 0) {
-                top_pos = 70;
+                top_pos = 105;
                 left_pos += 150;
                 weapon.style.position = "absolute";
                 weapon.style.top = `${top_pos}px`;
