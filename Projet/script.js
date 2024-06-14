@@ -668,7 +668,7 @@ function pos_div_descr() {
             weapon.style.position = "absolute";
             weapon.style.top = `${top_pos}px`;
             weapon.style.left = `${left_pos}px`;
-            weapon.style.fontSize = `18px`;
+            weapon.style.fontSize = `15px`;
             weapon.style.color = `#B87333`;
             weapon.style.fontFamily = "Lucida Console", "Courier New";
             weapon.style.textAlignLast = "justify";
