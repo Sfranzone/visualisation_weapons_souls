@@ -1,3 +1,4 @@
+//Table json
 let weaponData = {
     daggers: { "name": "daggers","elden_ring": 16, "dark_souls_iii": 13, "sekiro": 0, "remant_ii": 2, "bloodborne": 0, "nioh": 0, "total": 31 },
     straight_swords: { "name": "straight_swords","elden_ring": 19, "dark_souls_iii": 17, "sekiro": 0, "remant_ii": 6, "bloodborne": 4, "nioh": 0, "total": 46 },
@@ -116,6 +117,7 @@ function gothrough_weapons(){
     };
 };
 
+//Catégorisation des armes selon leur(s) jeu(x)
 const checkboxData = {
     daggers_checkbox: {
         visibleClasses: ['weapon_identifier_DS', 'weapon_identifier_ER', 'weapon_identifier_R'],
@@ -259,6 +261,7 @@ const checkboxData = {
     }
 };
 
+//Fonction pour montrer chaque jeu
 function showTitle(checkbox) {
     // Désactiver toutes les autres checkboxes d'armes
     document.querySelectorAll('input.weapon-checkbox[type="checkbox"]').forEach(cb => {
@@ -330,12 +333,12 @@ function pos_div_descr() {
 
 pos_div_descr();
 
+//Bar plot
 // Fonction pour afficher le graphique
 function createBarChart(selectedWeapon) {
     // Filtre des données pour les armes sélectionnées
     const weapon = weaponData[selectedWeapon];
   
-    // Création des données pour le graphique
     const data = Object.keys(weapon)
       .filter(key => key !== "name" && key !== "total")
       .map(key => ({
@@ -343,7 +346,6 @@ function createBarChart(selectedWeapon) {
         count: weapon[key]
       }));
   
-    // Suppression de l'élément SVG existant s'il existe
     d3.select("#chart").selectAll("*").remove();
   
     // Déclaration des dimensions et des marges du graphique
@@ -384,7 +386,7 @@ function createBarChart(selectedWeapon) {
       .attr("transform", `translate(0,${height})`)
       .call(d3.axisBottom(x))
       .selectAll("text")
-        .style("font-size", "14px")
+        .style("font-size", "12px")
         .style("font-family", "Arial, sans-serif")
         .attr("text-anchor", "end")
         .attr("transform", function(d) {
@@ -682,6 +684,7 @@ function createForceGraph() {
   
   let popup;
   
+  //Fonction pour faire pop-up le graphe
   function openPopup() {
     popup = window.open("", "Graph Popup", "width=1000,height=1000");
   

@@ -10,6 +10,7 @@
 <body>
     <div class="visualisation_description">
         <div class="title">Data Visualization on the Distribution of Weapon Categories in Souls-Likes</div>
+        <h1>Barbarians Playground</h1>
         <div class="explanation">This visualization illustrates the frequency of each weapon type in different souls-likes.<br>Click on the game(s) of your choice to include them in the calculation (a green border confirms the selection).<br>Hover over the weapons to get a brief description, or click on a specific weapon<br>to see on the right all the games that include it (a white border confirms the selection).<br>Happy exploring!<br> <br></div>
             <label for="elden_ring_checkbox" class="game-checkbox">
             <input type="checkbox" id="elden_ring_checkbox" value="elden_ring" onchange="change_game_status(this)">
@@ -365,12 +366,13 @@
         <img class="weapon_identifier_B" src="./ressources/pictures/bloodborne_title.png" alt="Bloodborne Title">
         <img class="weapon_identifier_N" src="./ressources/pictures/nioh_title.png" alt="Nioh Title">
     </div>
-    <h1>Analyzes</h1>
+    <h1>Scholar Playground</h1>
+    <div class="scholar">Now that you had fun with the images full visualization, it is time for some reading. Here we will give you some more straight forwards datas, but we will explain them to you.<br>It will give a better understanding of what those datas allowed us to discover about those weapon categories.<br> <br></div>
     <div id="charts-container" class="charts-container">
         <div class="chart-container">
             <select id="weapon-select"></select>
             <div id="chart"></div>
-            <div class="bar-plot-analysis"></div>
+            <div class="bar-plot-analysis">This bar plot aligns all games at once to check which games have the most of each weapon type. By checking the different categories, we discovered each sort of game has a type of weapon that prevails. The dark medieval like Elden Ring and Dark Souls III own the biggest amount of "great" weapons. Oriental games such as Sekiro and Nioh possess the biggest number of weapons we could find in Asian countries, like the Katanas, Kusarigamas and Spears. Remnant II being a multiverse game based on the modern era, it is the only one where players can enjoy shooting with handguns. At last, Bloodborne, placed in nightmares from the Victorian Era, they got their own category of "trick weapons" (those are modified weapons from this era. It can include musket like, swords, scythe, and so on), which is most of the arsenal you can get in this game.</div>
         </div>
         <div class="chart-container">
             <a href="#" id="graph-link">Display the Force Chart</a>
