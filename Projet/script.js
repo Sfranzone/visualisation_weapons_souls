@@ -389,7 +389,7 @@ let weaponData = {
     crossbows: { "name": "crossbows","elden ring": 7, "dark souls iii": 7, "sekiro": 0, "remnant ii": 2, "bloodborne": 0, "nioh": 0, "total": 16 },
     ballistas: { "name": "ballistas","elden ring": 2, "dark souls iii": 0, "sekiro": 0, "remnant ii": 0, "bloodborne": 0, "nioh": 7, "total": 9 },
     glintstone_staffs: { "name": "glintstone_staffs","elden ring": 18, "dark souls iii": 12, "sekiro": 0, "remnant ii": 4, "bloodborne": 0, "nioh": 0, "total": 34 },
-    sacred_seals: { "name": "sacred_seals","elden ring": 9, "dark souls iii": 0, "sekiro": 0, "remnant ii": 1, "bloodborne": 0, "nioh": 0, "total": 10 },
+    sacred_seals: { "name": "sacred_seals","elden ring": 9, "dark souls iii": 0, "sekiro": 0, "remnant ii": 0, "bloodborne": 0, "nioh": 0, "total": 9 },
     tools: { "name": "tools","elden ring": 11, "dark souls iii": 16, "sekiro": 10, "remnant ii": 0, "bloodborne": 3, "nioh": 0, "total": 40 },
     hand_guns: { "name": "hand_guns","elden ring": 0, "dark souls iii": 0, "sekiro": 0, "remnant ii": 21, "bloodborne": 0, "nioh": 0, "total": 21 },
     long_guns: { "name": "long_guns","elden ring": 0, "dark souls iii": 0, "sekiro": 0, "remnant ii": 27, "bloodborne": 0, "nioh": 8, "total": 35 },
@@ -620,8 +620,8 @@ const checkboxData = {
 };
 
 function showTitle(checkbox) {
-    // Désactiver toutes les autres checkboxes
-    document.querySelectorAll('input[type="checkbox"]').forEach(cb => {
+    // Désactiver toutes les autres checkboxes d'armes
+    document.querySelectorAll('input.weapon-checkbox[type="checkbox"]').forEach(cb => {
         if (cb !== checkbox) {
             cb.checked = false;
         }
@@ -655,6 +655,7 @@ function showTitle(checkbox) {
     // Ajouter une ombre à l'élément correspondant
     document.getElementById(data.shadowId).style.boxShadow = "0 0 10px #9ecaed";
 }
+
 
 function pos_div_descr() {
     let top_pos = 0;
