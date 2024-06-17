@@ -817,6 +817,18 @@ h1 {
     font-size: 20px;
 }
 
+.force-graph-analysis {
+    text-align: justify;
+    font-size: 20px;
+}
+
+.pie-plot-analysis {
+    text-align: justify;
+    font-size: 20px;
+    margin-left: 800px;
+    margin-right: 800px;
+}
+
 .charts-container {
     display: flex;
     justify-content: space-around;
@@ -833,6 +845,10 @@ h1 {
 .chart-container select {
     width: 100%;
     margin-bottom: 10px;
+}
+
+.graph-link-text {
+    font-size: 20px;
 }
 
 #graph-link {
