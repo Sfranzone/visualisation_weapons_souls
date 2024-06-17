@@ -856,3 +856,7 @@ h1 {
     text-align: center;
     margin-top: 10px;
 }
+
+#weapon-select {
+    font-size: 20px;
+}
