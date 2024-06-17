@@ -365,19 +365,19 @@
         <img class="weapon_identifier_B" src="./ressources/pictures/bloodborne_title.png" alt="Bloodborne Title">
         <img class="weapon_identifier_N" src="./ressources/pictures/nioh_title.png" alt="Nioh Title">
     </div>
-    <h1>Sélection d'Armes</h1>
-    <select id="weapon-select"></select>
-    <div id="chart"></div>
-    <!-- Ajoutez ce lien dans le body -->
-    <a href="#" id="graph-link">Afficher le graphique</a>
-
-    <!-- Structure pour le pop-up -->
-    <div id="popup" class="popup">
-        <div class="popup-content">
-            <span class="close" onclick="closePopup()">&times;</span>
-            <div id="graph-container" class="graph-container"></div>
+    <h1>Analyses</h1>
+    <div id="charts-container" class="charts-container">
+        <div class="chart-container">
+            <select id="weapon-select"></select>
+            <div id="chart"></div>
+        </div>
+        <div class="chart-container">
+            <a href="#" id="graph-link">Afficher le graphique de Force</a>
         </div>
     </div>
+    <div id="popup" class="popup">
+            <div id="graph-container" class="graph-container"></div>
+        </div>
     <script src="script.js"></script>
 </body>
 </html>
