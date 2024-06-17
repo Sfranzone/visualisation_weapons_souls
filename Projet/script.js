@@ -442,22 +442,20 @@ function capitalizeWords(str) {
 }
 
 //Pie chart
+// Données pour la pie chart avec couleurs spécifiques pour chaque jeu
 let gamesData = [
-    { name: "elden_ring", value: weaponData.toutes_armes.elden_ring },
-    { name: "dark_souls_iii", value: weaponData.toutes_armes.dark_souls_iii },
-    { name: "sekiro", value: weaponData.toutes_armes.sekiro },
-    { name: "remant_ii", value: weaponData.toutes_armes.remant_ii },
-    { name: "bloodborne", value: weaponData.toutes_armes.bloodborne },
-    { name: "nioh", value: weaponData.toutes_armes.nioh }
+    { name: "elden_ring", value: weaponData.toutes_armes.elden_ring, color: "#eaa10b" },
+    { name: "dark_souls_iii", value: weaponData.toutes_armes.dark_souls_iii, color: "#dbe02a" },
+    { name: "sekiro", value: weaponData.toutes_armes.sekiro, color: "#78c756" },
+    { name: "remant_ii", value: weaponData.toutes_armes.remant_ii, color: "#FF0000" },
+    { name: "bloodborne", value: weaponData.toutes_armes.bloodborne, color: "#8A2BE2" },
+    { name: "nioh", value: weaponData.toutes_armes.nioh, color: "#0000FF" }
 ];
 
 // Définir les dimensions et le rayon de la pie chart
 let width = 600;
 let height = 400;
 let radius = Math.min(width, height) / 2;
-
-// Couleurs pour chaque jeu
-let color = d3.scaleOrdinal(d3.schemeCategory10);
 
 // Sélectionner l'élément SVG et configurer l'élément g pour le graphique
 let svg = d3.select('body')
@@ -486,7 +484,7 @@ let arcs = svg.selectAll('arc')
 // Ajouter des chemins pour chaque arc
 arcs.append('path')
     .attr('d', arc)
-    .attr('fill', d => color(d.data.name))
+    .attr('fill', d => d.data.color) // Utilisation de la couleur spécifiée pour chaque jeu
     .attr('stroke', 'white')
     .style('stroke-width', '2px');
 
@@ -502,13 +500,13 @@ let legend = svg.selectAll('.legend')
 legend.append('rect')
     .attr('width', 10)
     .attr('height', 10)
-    .attr('fill', d => color(d.data.name));
+    .attr('fill', d => d.data.color); // Utilisation de la couleur spécifiée pour chaque jeu
 
 // Ajouter des étiquettes pour chaque entrée de légende
 legend.append('text')
     .attr('x', 15)
     .attr('y', 5)
-    .text(d => `${d.data.name} (${d.data.value})`)
+    .text(d => `${d.data.name.replace(/_/g, ' ').toUpperCase()} (${d.data.value})`)
     .style('font-size', '12px')
     .style('fill', 'white')
     .style('alignment-baseline', 'middle');

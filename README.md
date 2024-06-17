@@ -1,9 +1,9 @@
 # Souls like weapons master
 
 ## Introduction
-Pour ce projet, nous avons sélectionné arbitrairement six jeux catégorisés comme souls like. Quatre d'entre eux sont dans un univers similaire au moyen Âge, un dans une époque semblable à l'ère victorienne, et un dernier étant dans un futur apocalyptique incluant un voyage dans un multivers ramenant à d'autres époques d'autres mondes.
+For this project, we arbitrarily selected six games categorized as souls-likes. Four of them are set in a universe similar to the Middle Ages, one in an era resembling the Victorian period, and the last one in an apocalyptic future including a journey through a multiverse bringing back to other eras of other worlds.
 
-Ces jeux sont les suivants:
+These games are:
 
 - Elden Ring
 - Dark Souls III
@@ -12,22 +12,25 @@ Ces jeux sont les suivants:
 - Bloodborne
 - Remnant II
 
-## L'idée
+## The Idea
 
 ![Main logo](./Projet/other/vd_souls_look.PNG)
 
-Notre objectif est de produire une visualisation la fréquence de chaque type d'arme dans différents souls-like. Cela permet d'observer quels jeux possèdent le plus d'armes dans X ou Y catégories vis-à-vis des autres jeux. Pour s'y retrouver, la visualisation permet également de sélectionner une arme pour avoir la référence de tous les jeux la mettant à disposition des joueurs. Des descriptions de chaque arme sont également disponible en les survolant avec un curseur.
+Our objective is to produce a visualization of the frequency of each weapon type in different souls-likes. This allows us to observe which games have the most weapons in X or Y categories compared to other games. To help navigate, the visualization also allows you to select a weapon to see the reference of all the games that make it available to players. Descriptions of each weapon are also available by hovering over them with a cursor.
 
-## Tester notre projet
-Votre première étape consiste à cloner notre git. Une fois effectuer, vous lancez le projet sur votre navigateur, en utilisant par exemple la fonctionnalité "Go Live" de l'éditeur Visual Studio Code.
-Ensuite, suivez les instructions sur la page pour commencer à manipuler notre visualisation.
+## Testing Our Project
+Your first step is to clone our git. Once done, you launch the project in your browser, using, for example, the "Go Live" feature of the Visual Studio Code editor. 
+Then, follow the instructions on the page to start interacting with our visualization.
+
+## Second Part
+Following our interactive visualization, we offer you three other visualizations, allowing us to provide an analysis of the results of our research on weapons in these categories of souls-likes.
 
 ## Copyright
-Toutes les images proviennent des Fandoms et des pages Steam des jeux concernés.
+All images are from the Fandoms and the Steam pages of the respective games.
 
-## Créateurs
-Ce projet a été réalisé par:
+## Creators
+This project was created by:
 - Olivier Oppliger
 - Sébastien Franzone
 
-Sous la tutelle de Isaac Pante lors du cours de "Visualisation de données" (SLI, Lettres, Unil).
+Under the supervision of Isaac Pante during the "Data Visualization" course (SLI, Letters, Unil).
