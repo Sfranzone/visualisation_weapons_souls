@@ -368,6 +368,16 @@
     <h1>Sélection d'Armes</h1>
     <select id="weapon-select"></select>
     <div id="chart"></div>
+    <!-- Ajoutez ce lien dans le body -->
+    <a href="#" id="graph-link">Afficher le graphique</a>
+
+    <!-- Structure pour le pop-up -->
+    <div id="popup" class="popup">
+        <div class="popup-content">
+            <span class="close" onclick="closePopup()">&times;</span>
+            <div id="graph-container" class="graph-container"></div>
+        </div>
+    </div>
     <script src="script.js"></script>
 </body>
 </html>

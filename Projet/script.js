@@ -1,363 +1,3 @@
-/* let daggers = {
-    "elden_ring": "16",
-    "dark_souls_iii": "13",
-    "sekiro": "0",
-    "remant_ii": "2",
-    "bloodborne": "0",
-    "nioh": "0",
-    "total": "31"
-};
-
-let straight_swords = {
-    "elden_ring": "19",
-    "dark_souls_iii": "17",
-    "sekiro": "0",
-    "remant_ii": "6",
-    "bloodborne": "4",
-    "nioh": "0",
-    "total": "46"
-};
-
-let greatswords = {
-    "elden_ring": "21",
-    "dark_souls_iii": "16",
-    "sekiro": "0",
-    "remant_ii": "2",
-    "bloodborne": "3",
-    "nioh": "19",
-    "total": "61"
-};
-
-let colossal_swords = {
-    "elden_ring": "11",
-    "dark_souls_iii": "11",
-    "sekiro": "0",
-    "remant_ii": "3",
-    "bloodborne": "0",
-    "nioh": "0",
-    "total": "25"
-};
-
-let thrusting_swords = {
-    "elden_ring": "7",
-    "dark_souls_iii": "6",
-    "sekiro": "0",
-    "remant_ii": "0",
-    "bloodborne": "0",
-    "nioh": "0",
-    "total": "13"
-};
-
-let heavy_thrusting_swords = {
-    "elden_ring": "4",
-    "dark_souls_iii": "0",
-    "sekiro": "0",
-    "remant_ii": "0",
-    "bloodborne": "0",
-    "nioh": "0",
-    "total": "4"
-};
-
-let curved_swords = {
-    "elden_ring": "15",
-    "dark_souls_iii": "15",
-    "sekiro": "0",
-    "remant_ii": "0",
-    "bloodborne": "0",
-    "nioh": "0",
-    "total": "30"
-};
-
-let curved_greatswords = {
-    "elden_ring": "9",
-    "dark_souls_iii": "5",
-    "sekiro": "0",
-    "remant_ii": "0",
-    "bloodborne": "0",
-    "nioh": "0",
-    "total": "14"
-};
-
-let katanas = {
-    "elden_ring": "8",
-    "dark_souls_iii": "8",
-    "sekiro": "2",
-    "remant_ii": "3",
-    "bloodborne": "1",
-    "nioh": "70",
-    "total": "92"
-};
-
-let twinblades = {
-    "elden_ring": "6",
-    "dark_souls_iii": "0",
-    "sekiro": "0",
-    "remant_ii": "0",
-    "bloodborne": "0",
-    "nioh": "0",
-    "total": "6"
-};
-
-let axe = {
-    "elden_ring": "13",
-    "dark_souls_iii": "10",
-    "sekiro": "0",
-    "remant_ii": "2",
-    "bloodborne": "1",
-    "nioh": "29",
-    "total": "55"
-};
-
-let greataxes = {
-    "elden_ring": "11",
-    "dark_souls_iii": "7",
-    "sekiro": "0",
-    "remant_ii": "0",
-    "bloodborne": "1",
-    "nioh": "0",
-    "total": "19"
-};
-
-let hammers = {
-    "elden_ring": "15",
-    "dark_souls_iii": "7",
-    "sekiro": "0",
-    "remant_ii": "3",
-    "bloodborne": "1",
-    "nioh": "0",
-    "total": "26"
-};
-
-let flails = {
-    "elden_ring": "5",
-    "dark_souls_iii": "1",
-    "sekiro": "0",
-    "remant_ii": "2",
-    "bloodborne": "0",
-    "nioh": "0",
-    "total": "8"
-};
-
-let great_hammers = {
-    "elden_ring": "14",
-    "dark_souls_iii": "14",
-    "sekiro": "0",
-    "remant_ii": "3",
-    "bloodborne": "1",
-    "nioh": "0",
-    "total": "32"
-};
-
-let colossal_weapons = {
-    "elden_ring": "15",
-    "dark_souls_iii": "0",
-    "sekiro": "0",
-    "remant_ii": "0",
-    "bloodborne": "1",
-    "nioh": "0",
-    "total": "16"
-};
-
-let spears = {
-    "elden_ring": "16",
-    "dark_souls_iii": "21",
-    "sekiro": "0",
-    "remant_ii": "3",
-    "bloodborne": "1",
-    "nioh": "33",
-    "total": "74"
-};
-
-let great_spears = {
-    "elden_ring": "6",
-    "dark_souls_iii": "0",
-    "sekiro": "0",
-    "remant_ii": "0",
-    "bloodborne": "0",
-    "nioh": "0",
-    "total": "6"
-};
-
-let halberds = {
-    "elden_ring": "16",
-    "dark_souls_iii": "11",
-    "sekiro": "0",
-    "remant_ii": "0",
-    "bloodborne": "0",
-    "nioh": "0",
-    "total": "27"
-};
-
-let reapers = {
-    "elden_ring": "4",
-    "dark_souls_iii": "4",
-    "sekiro": "0",
-    "remant_ii": "2",
-    "bloodborne": "0",
-    "nioh": "0",
-    "total": "10"
-};
-
-let whips = {
-    "elden_ring": "6",
-    "dark_souls_iii": "5",
-    "sekiro": "0",
-    "remant_ii": "0",
-    "bloodborne": "0",
-    "nioh": "0",
-    "total": "11"
-};
-
-let kusarigama = {
-    "elden_ring": "0",
-    "dark_souls_iii": "0",
-    "sekiro": "0",
-    "remant_ii": "0",
-    "bloodborne": "0",
-    "nioh": "28",
-    "total": "28"
-};
-
-let fists = {
-    "elden_ring": "9",
-    "dark_souls_iii": "3",
-    "sekiro": "0",
-    "remant_ii": "1",
-    "bloodborne": "0",
-    "nioh": "15",
-    "total": "28"
-};
-
-let claws = {
-    "elden_ring": "4",
-    "dark_souls_iii": "3",
-    "sekiro": "0",
-    "remant_ii": "5",
-    "bloodborne": "1",
-    "nioh": "0",
-    "total": "13"
-};
-
-let light_bows = {
-    "elden_ring": "5",
-    "dark_souls_iii": "0",
-    "sekiro": "0",
-    "remant_ii": "0",
-    "bloodborne": "0",
-    "nioh": "0",
-    "total": "5"
-};
-
-let bows = {
-    "elden_ring": "7",
-    "dark_souls_iii": "7",
-    "sekiro": "0",
-    "remant_ii": "1",
-    "bloodborne": "0",
-    "nioh": "7",
-    "total": "22"
-};
-
-let greatbows = {
-    "elden_ring": "4",
-    "dark_souls_iii": "3",
-    "sekiro": "0",
-    "remant_ii": "2",
-    "bloodborne": "0",
-    "nioh": "0",
-    "total": "9"
-};
-
-let crossbows = {
-    "elden_ring": "7",
-    "dark_souls_iii": "7",
-    "sekiro": "0",
-    "remant_ii": "2",
-    "bloodborne": "0",
-    "nioh": "0",
-    "total": "16"
-};
-
-let ballistas = {
-    "elden_ring": "2",
-    "dark_souls_iii": "0",
-    "sekiro": "0",
-    "remant_ii": "0",
-    "bloodborne": "0",
-    "nioh": "7",
-    "total": "9"
-};
-
-let glintstone_staffs = {
-    "elden_ring": "18",
-    "dark_souls_iii": "12",
-    "sekiro": "0",
-    "remant_ii": "4",
-    "bloodborne": "0",
-    "nioh": "0",
-    "total": "34"
-};
-
-let sacred_seals = {
-    "elden_ring": "9",
-    "dark_souls_iii": "0",
-    "sekiro": "0",
-    "remant_ii": "0",
-    "bloodborne": "0",
-    "nioh": "0",
-    "total": "9"
-};
-
-let tools = {
-    "elden_ring": "11",
-    "dark_souls_iii": "16",
-    "sekiro": "10",
-    "remant_ii": "0",
-    "bloodborne": "3",
-    "nioh": "0",
-    "total": "40"
-};
-
-let hand_guns = {
-    "elden_ring": "0",
-    "dark_souls_iii": "0",
-    "sekiro": "0",
-    "remant_ii": "21",
-    "bloodborne": "0",
-    "nioh": "0",
-    "total": "21"
-};
-
-let long_guns = {
-    "elden_ring": "0",
-    "dark_souls_iii": "0",
-    "sekiro": "0",
-    "remant_ii": "27",
-    "bloodborne": "0",
-    "nioh": "8",
-    "total": "35"
-};
-
-let trick_weapons = {
-    "elden_ring": "0",
-    "dark_souls_iii": "0",
-    "sekiro": "0",
-    "remant_ii": "0",
-    "bloodborne": "8",
-    "nioh": "0",
-    "total": "8"
-};
-
-let total = {
-    "elden_ring": "313",
-    "dark_souls_iii": "222",
-    "sekiro": "12",
-    "remant_ii": "94",
-    "bloodborne": "26",
-    "nioh": "216",
-    "total": "883"
-}; */
-
 let weaponData = {
     daggers: { "name": "daggers","elden_ring": 16, "dark_souls_iii": 13, "sekiro": 0, "remant_ii": 2, "bloodborne": 0, "nioh": 0, "total": 31 },
     straight_swords: { "name": "straight_swords","elden_ring": 19, "dark_souls_iii": 17, "sekiro": 0, "remant_ii": 6, "bloodborne": 4, "nioh": 0, "total": 46 },
@@ -690,7 +330,7 @@ function pos_div_descr() {
 
 pos_div_descr();
 
-// Fonction pour afficher le graphique
+//Bar chart
 function createBarChart(selectedWeapon) {
     // Filtre des données pour les armes sélectionnées
     const weapon = weaponData[selectedWeapon];
@@ -789,7 +429,7 @@ function createBarChart(selectedWeapon) {
 
     select.selectAll("option")
     .data(Object.keys(weaponData)
-        .filter(d => d !== "rien"))  // Exclure l'option "rien"
+        .filter(d => d !== "rien" && d !== "toutes_armes"))
     .enter().append("option")
     .text(d => capitalizeWords(weaponData[d].name.replace(/_/g, ' ')))
     .attr("value", d => d);
@@ -804,4 +444,286 @@ function createBarChart(selectedWeapon) {
         return txt.toUpperCase();
         });
     }
-    
+
+//Pie chart
+let gamesData = [
+    { name: "elden_ring", value: weaponData.toutes_armes.elden_ring },
+    { name: "dark_souls_iii", value: weaponData.toutes_armes.dark_souls_iii },
+    { name: "sekiro", value: weaponData.toutes_armes.sekiro },
+    { name: "remant_ii", value: weaponData.toutes_armes.remant_ii },
+    { name: "bloodborne", value: weaponData.toutes_armes.bloodborne },
+    { name: "nioh", value: weaponData.toutes_armes.nioh }
+];
+
+// Définir les dimensions et le rayon de la pie chart
+let width = 600;
+let height = 400;
+let radius = Math.min(width, height) / 2;
+
+// Couleurs pour chaque jeu
+let color = d3.scaleOrdinal(d3.schemeCategory10);
+
+// Sélectionner l'élément SVG et configurer l'élément g pour le graphique
+let svg = d3.select('body')
+    .append('svg')
+    .attr('width', width)
+    .attr('height', height)
+    .append('g')
+    .attr('transform', 'translate(' + width / 2 + ',' + height / 2 + ')');
+
+// Créer un arc basé sur les valeurs
+let arc = d3.arc()
+    .innerRadius(0)
+    .outerRadius(radius);
+
+// Données pour la pie chart
+let pie = d3.pie()
+    .value(d => d.value);
+
+// Créer des arcs pour chaque segment de la pie chart
+let arcs = svg.selectAll('arc')
+    .data(pie(gamesData))
+    .enter()
+    .append('g')
+    .attr('class', 'arc');
+
+// Ajouter des chemins pour chaque arc
+arcs.append('path')
+    .attr('d', arc)
+    .attr('fill', d => color(d.data.name))
+    .attr('stroke', 'white')
+    .style('stroke-width', '2px');
+
+// Ajouter des légendes à côté du graphique
+let legend = svg.selectAll('.legend')
+    .data(pie(gamesData))
+    .enter()
+    .append('g')
+    .attr('class', 'legend')
+    .attr('transform', (d, i) => `translate(${width / 2 + radius + 10},${i * 20 - radius})`);
+
+// Ajouter des rectangles colorés pour chaque entrée de légende
+legend.append('rect')
+    .attr('width', 10)
+    .attr('height', 10)
+    .attr('fill', d => color(d.data.name));
+
+// Ajouter des étiquettes pour chaque entrée de légende
+legend.append('text')
+    .attr('x', 15)
+    .attr('y', 5)
+    .text(d => `${d.data.name} (${d.data.value})`)
+    .style('font-size', '12px')
+    .style('fill', 'white')
+    .style('alignment-baseline', 'middle');
+
+// Fonction pour calculer l'angle médian d'un arc
+function midAngle(d) {
+    return d.startAngle + (d.endAngle - d.startAngle) / 2;
+}
+
+// Force graph
+let nodes = [];
+let links = [];
+
+// Ajouter les armes comme nœuds
+Object.keys(weaponData).forEach(weapon => {
+  if (weapon !== 'rien' && weapon !== 'toutes_armes') {
+    nodes.push({ id: weapon, type: 'weapon' });
+  }
+});
+
+// Ajouter les jeux comme nœuds
+const games = Object.keys(weaponData.daggers).filter(key => key !== 'name' && key !== 'total');
+games.forEach(game => {
+  nodes.push({ id: game, type: 'game' });
+});
+
+// Créer des liens entre jeux et armes si la valeur est non nulle
+games.forEach(game => {
+  Object.keys(weaponData).forEach(weapon => {
+    if (weapon !== 'rien' && weapon !== 'toutes_armes' && weaponData[weapon][game] !== 0) {
+      links.push({ source: game, target: weapon, value: weaponData[weapon][game] });
+    }
+  });
+});
+
+// Fonction pour créer le graphique
+function createForceGraph() {
+  function ForceGraph({
+    nodes,
+    links
+  }, {
+    nodeId = d => d.id,
+    nodeGroup = d => d.type === 'weapon' ? 'weapon' : 'game',
+    nodeTitle = d => d.id,
+    nodeFill = d => d.type === 'weapon' ? '#3182bd' : '#fd8d3c',
+    nodeStroke = "#fff",
+    nodeStrokeWidth = 1.5,
+    nodeStrokeOpacity = 1,
+    nodeRadius = 5,
+    nodeStrength = -30,
+    linkSource = ({ source }) => source,
+    linkTarget = ({ target }) => target,
+    linkStroke = "#999",
+    linkStrokeOpacity = 0.6,
+    linkStrokeWidth = d => Math.sqrt(d.value),
+    linkStrokeLinecap = "round",
+    width = 960,
+    height = 600,
+    invalidation
+  } = {}) {
+    // Replace the input nodes and links with mutable objects for the simulation.
+    nodes = nodes.map(d => ({ id: nodeId(d), type: nodeGroup(d), ...d }));
+    links = links.map(d => ({ source: linkSource(d), target: linkTarget(d), ...d }));
+
+    // Compute default domains.
+    const nodeGroups = Array.from(new Set(nodes.map(node => node.type))).sort();
+
+    // Construct the scales.
+    const color = d3.scaleOrdinal(nodeGroups, d3.schemeCategory10);
+
+    // Construct the forces.
+    const forceNode = d3.forceManyBody().strength(node => node.type === 'game' ? -100 : nodeStrength);
+    const forceLink = d3.forceLink(links).id(d => d.id).distance(100).strength(1);
+
+    const simulation = d3.forceSimulation(nodes)
+      .force("link", forceLink)
+      .force("charge", forceNode)
+      .force("center", d3.forceCenter(width / 2, height / 2));
+
+    // Zoom behavior
+    const zoom = d3.zoom()
+      .scaleExtent([0.1, 10])
+      .on("zoom", zoomed);
+
+    const svg = d3.create("svg")
+      .attr("width", width)
+      .attr("height", height)
+      .attr("style", "max-width: 100%; height: auto; height: intrinsic;")
+      .call(zoom);
+
+    const container = svg.append("g");
+
+    const link = container.append("g")
+      .attr("stroke", linkStroke)
+      .attr("stroke-opacity", linkStrokeOpacity)
+      .selectAll("line")
+      .data(links)
+      .join("line")
+      .attr("stroke-width", linkStrokeWidth)
+      .attr("stroke-linecap", linkStrokeLinecap);
+
+    const node = container.append("g")
+      .attr("stroke", nodeStroke)
+      .attr("stroke-opacity", nodeStrokeOpacity)
+      .attr("stroke-width", nodeStrokeWidth)
+      .selectAll("circle")
+      .data(nodes)
+      .join("circle")
+      .attr("r", nodeRadius)
+      .attr("fill", d => nodeFill(d))
+      .call(drag(simulation));
+
+    node.append("title")
+      .text(nodeTitle);
+
+    link.on("mouseover", (event, d) => {
+      // Highlight functionality can be added here
+    })
+      .on("mouseout", () => {
+        // Remove highlight functionality can be added here
+      });
+
+    simulation.on("tick", () => {
+      link
+        .attr("x1", d => d.source.x)
+        .attr("y1", d => d.source.y)
+        .attr("x2", d => d.target.x)
+        .attr("y2", d => d.target.y);
+
+      node
+        .attr("cx", d => d.x)
+        .attr("cy", d => d.y);
+    });
+
+    if (invalidation != null) invalidation.then(() => simulation.stop());
+
+    function zoomed(event) {
+      container.attr("transform", event.transform);
+    }
+
+    function drag(simulation) {
+      function dragstarted(event) {
+        if (!event.active) simulation.alphaTarget(0.3).restart();
+        event.subject.fx = event.subject.x;
+        event.subject.fy = event.subject.y;
+      }
+
+      function dragged(event) {
+        event.subject.fx = event.x;
+        event.subject.fy = event.y;
+      }
+
+      function dragended(event) {
+        if (!event.active) simulation.alphaTarget(0);
+        event.subject.fx = null;
+        event.subject.fy = null;
+      }
+
+      return d3.drag()
+        .on("start", dragstarted)
+        .on("drag", dragged)
+        .on("end", dragended);
+    }
+
+    return svg.node(); // Retourne directement le nœud SVG
+  }
+
+  const graph = ForceGraph({
+    nodes: nodes,
+    links: links
+  }, {
+    width: 650,
+    height: 450
+  });
+
+  return graph; // Retourne le graphique SVG
+}
+
+// Appeler la fonction pour créer le graphique au chargement de la page
+document.addEventListener("DOMContentLoaded", function () {
+  const graphLink = document.getElementById("graph-link");
+
+  graphLink.addEventListener("click", function (event) {
+    event.preventDefault();
+
+    // Ouvrir le pop-up
+    openPopup();
+  });
+});
+
+let popup;
+
+function openPopup() {
+  // Ouvrir une nouvelle fenêtre pour le pop-up
+  popup = window.open("", "Graph Popup", "width=1000,height=700");
+
+  if (popup.document.body.innerHTML === "") {
+    const graphContainer = popup.document.createElement("div");
+    graphContainer.id = "graph-container";
+    graphContainer.className = "graph-container";
+
+    // Créer le graphique dans le pop-up
+    const graph = createForceGraph(); // Utilisation de la fonction createForceGraph
+
+    graphContainer.appendChild(graph); // Ajoute le graphique dans le conteneur du pop-up
+    popup.document.body.appendChild(graphContainer); // Ajoute le conteneur dans le body du pop-up
+  }
+}
+
+function closePopup() {
+  if (popup) {
+    popup.close();
+  }
+}
