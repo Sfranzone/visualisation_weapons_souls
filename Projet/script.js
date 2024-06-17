@@ -525,14 +525,19 @@ let links = [];
 // Ajouter les armes comme nœuds
 Object.keys(weaponData).forEach(weapon => {
   if (weapon !== 'rien' && weapon !== 'toutes_armes') {
-    nodes.push({ id: weapon, type: 'weapon' });
+    let formattedWeaponName = weapon.replace(/_/g, ' '); // Remplace les underscores par des espaces
+    formattedWeaponName = formattedWeaponName.toLowerCase().split(' ').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' '); // Met la première lettre de chaque mot en majuscule
+    nodes.push({ id: weapon, type: 'weapon', formattedName: formattedWeaponName });
   }
 });
 
-// Ajouter les jeux comme nœuds
+// Ajouter les jeux comme nœuds avec les noms formatés
 const games = Object.keys(weaponData.daggers).filter(key => key !== 'name' && key !== 'total');
 games.forEach(game => {
-  nodes.push({ id: game, type: 'game' });
+  let formattedGameName = game.replace(/_/g, ' '); // Remplace les underscores par des espaces
+  formattedGameName = formattedGameName.toLowerCase().split(' ').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' '); // Met la première lettre de chaque mot en majuscule
+  formattedGameName = formattedGameName.replace(/\bIi\b/g, 'II').replace(/\bIii\b/g, 'III'); // Met les chiffres romains en majuscules
+  nodes.push({ id: game, originalId: game, type: 'game', formattedName: formattedGameName });
 });
 
 // Créer des liens entre jeux et armes si la valeur est non nulle
@@ -545,173 +550,182 @@ games.forEach(game => {
 });
 
 // Fonction pour créer le graphique
-function createForceGraph() {
-    function ForceGraph({
-      nodes,
-      links
-    }, {
-      nodeId = d => d.id,
-      nodeGroup = d => d.type === 'weapon' ? 'weapon' : 'game',
-      nodeTitle = d => d.id,
-      nodeFill = d => d.type === 'weapon' ? '#3182bd' : '#fd8d3c',
-      nodeStroke = "#fff",
-      nodeStrokeWidth = 1.5,
-      nodeStrokeOpacity = 1,
-      nodeRadius = 5,
-      nodeStrength = -30,
-      linkSource = ({ source }) => source,
-      linkTarget = ({ target }) => target,
-      linkStroke = "#999",
-      linkStrokeOpacity = 0.6,
-      linkStrokeWidth = d => Math.sqrt(d.value),
-      linkStrokeLinecap = "round",
-      width = 100,
-      height = 100,
-      invalidation
-    } = {}) {
-      nodes = nodes.map(d => ({ id: nodeId(d), type: nodeGroup(d), ...d }));
-      links = links.map(d => ({ source: linkSource(d), target: linkTarget(d), ...d }));
-  
-      const nodeGroups = Array.from(new Set(nodes.map(node => node.type))).sort();
-      const color = d3.scaleOrdinal(nodeGroups, d3.schemeCategory10);
-      const forceNode = d3.forceManyBody().strength(node => node.type === 'game' ? -100 : nodeStrength);
-      const forceLink = d3.forceLink(links).id(d => d.id).distance(100).strength(1);
-  
-      const simulation = d3.forceSimulation(nodes)
-        .force("link", forceLink)
-        .force("charge", forceNode)
-        .force("center", d3.forceCenter(width / 2, height / 2));
-  
-      const zoom = d3.zoom()
-        .scaleExtent([0.1, 10])
-        .on("zoom", zoomed);
-  
-      const svg = d3.create("svg")
-        .attr("width", "100%")
-        .attr("height", "100%")
-        .attr("viewBox", `0 0 ${width} ${height}`)
-        .attr("style", "max-width: 100%; height: auto; height: intrinsic;")
-        .call(zoom);
-  
-      const container = svg.append("g");
-  
-      const link = container.append("g")
-        .attr("stroke", linkStroke)
-        .attr("stroke-opacity", linkStrokeOpacity)
-        .selectAll("line")
-        .data(links)
-        .join("line")
-        .attr("stroke-width", linkStrokeWidth)
-        .attr("stroke-linecap", linkStrokeLinecap);
-  
-      const node = container.append("g")
-        .attr("stroke", nodeStroke)
-        .attr("stroke-opacity", nodeStrokeOpacity)
-        .attr("stroke-width", nodeStrokeWidth)
-        .selectAll("circle")
-        .data(nodes)
-        .join("circle")
-        .attr("r", nodeRadius)
-        .attr("fill", d => nodeFill(d))
-        .call(drag(simulation));
-  
-      node.append("title").text(nodeTitle);
-  
-      simulation.on("tick", () => {
-        link
-          .attr("x1", d => d.source.x)
-          .attr("y1", d => d.source.y)
-          .attr("x2", d => d.target.x)
-          .attr("y2", d => d.target.y);
-  
-        node
-          .attr("cx", d => d.x)
-          .attr("cy", d => d.y);
-      });
-  
-      if (invalidation != null) invalidation.then(() => simulation.stop());
-  
-      function zoomed(event) {
-        container.attr("transform", event.transform);
-      }
-  
-      function drag(simulation) {
-        function dragstarted(event) {
-          if (!event.active) simulation.alphaTarget(0.3).restart();
-          event.subject.fx = event.subject.x;
-          event.subject.fy = event.subject.y;
-        }
-  
-        function dragged(event) {
-          event.subject.fx = event.x;
-          event.subject.fy = event.y;
-        }
-  
-        function dragended(event) {
-          if (!event.active) simulation.alphaTarget(0);
-          event.subject.fx = null;
-          event.subject.fy = null;
-        }
-  
-        return d3.drag()
-          .on("start", dragstarted)
-          .on("drag", dragged)
-          .on("end", dragended);
-      }
-  
-      return svg.node();
+function createForceGraph({
+  nodes,
+  links
+}, {
+  nodeId = d => d.id,
+  nodeGroup = d => d.type === 'weapon' ? 'weapon' : 'game',
+  nodeTitle = d => d.formattedName, // Utiliser le nom formaté pour l'affichage
+  nodeFill = d => d.type === 'weapon' ? '#3182bd' : '#fd8d3c',
+  nodeStroke = "#fff",
+  nodeStrokeWidth = 1.5,
+  nodeStrokeOpacity = 1,
+  nodeRadius = 5,
+  nodeStrength = -30,
+  linkSource = ({ source }) => source,
+  linkTarget = ({ target }) => target,
+  linkStroke = "#999",
+  linkStrokeOpacity = 0.6,
+  linkStrokeWidth = d => Math.sqrt(d.value),
+  linkStrokeLinecap = "round",
+  width = 1000,
+  height = 1000,
+  invalidation
+} = {}) {
+  nodes = nodes.map(d => ({ id: nodeId(d), type: nodeGroup(d), ...d }));
+  links = links.map(d => ({ source: linkSource(d), target: linkTarget(d), ...d }));
+
+  const nodeGroups = Array.from(new Set(nodes.map(node => node.type))).sort();
+  const color = d3.scaleOrdinal(nodeGroups, d3.schemeCategory10);
+  const forceNode = d3.forceManyBody().strength(node => node.type === 'game' ? -100 : nodeStrength);
+  const forceLink = d3.forceLink(links).id(d => d.id).distance(100).strength(1);
+
+  const simulation = d3.forceSimulation(nodes)
+    .force("link", forceLink)
+    .force("charge", forceNode)
+    .force("center", d3.forceCenter(width / 2, height / 2));
+
+  const zoom = d3.zoom()
+    .scaleExtent([0.1, 10])
+    .on("zoom", zoomed);
+
+  const svg = d3.create("svg")
+    .attr("width", "100%")
+    .attr("height", "100%")
+    .attr("viewBox", `0 0 ${width} ${height}`)
+    .attr("style", "max-width: 100%; height: auto; height: intrinsic;")
+    .call(zoom);
+
+  const container = svg.append("g");
+
+  const link = container.append("g")
+    .attr("stroke", linkStroke)
+    .attr("stroke-opacity", linkStrokeOpacity)
+    .selectAll("line")
+    .data(links)
+    .join("line")
+    .attr("stroke-width", linkStrokeWidth)
+    .attr("stroke-linecap", linkStrokeLinecap);
+
+  const node = container.append("g")
+    .attr("stroke", nodeStroke)
+    .attr("stroke-opacity", nodeStrokeOpacity)
+    .attr("stroke-width", nodeStrokeWidth)
+    .selectAll("circle")
+    .data(nodes)
+    .join("circle")
+    .attr("r", nodeRadius)
+    .attr("fill", d => nodeFill(d))
+    .call(drag(simulation));
+
+  node.append("title").text(nodeTitle);
+
+  const labels = container.append("g")
+    .selectAll("text")
+    .data(nodes)
+    .join("text")
+    .attr("text-anchor", "middle")
+    .attr("dy", d => d.type === 'weapon' ? 12 : -6) // Ajuster la position en fonction du type de nœud
+    .text(d => d.formattedName) // Utiliser le nom formaté pour l'affichage
+    .attr("font-size", "10px")
+    .attr("fill", "#fff") // Couleur du texte en blanc
+    .attr("font-weight", "bold")
+    .style("pointer-events", "none"); // Désactiver les événements de souris sur les étiquettes
+
+  simulation.on("tick", () => {
+    link
+      .attr("x1", d => d.source.x)
+      .attr("y1", d => d.source.y)
+      .attr("x2", d => d.target.x)
+      .attr("y2", d => d.target.y);
+
+    node
+      .attr("cx", d => d.x)
+      .attr("cy", d => d.y);
+
+    labels
+      .attr("x", d => d.x)
+      .attr("y", d => d.type === 'weapon' ? d.y + 1 : d.y - 1); // Ajuster la position en fonction du type de nœud
+  });
+
+  if (invalidation != null) invalidation.then(() => simulation.stop());
+
+  function zoomed(event) {
+    container.attr("transform", event.transform);
+  }
+
+  function drag(simulation) {
+    function dragstarted(event) {
+      if (!event.active) simulation.alphaTarget(0.3).restart();
+      event.subject.fx = event.subject.x;
+      event.subject.fy = event.subject.y;
     }
-  
-    const graph = ForceGraph({
+
+    function dragged(event) {
+      event.subject.fx = event.x;
+      event.subject.fy = event.y;
+    }
+
+    function dragended(event) {
+      if (!event.active) simulation.alphaTarget(0);
+      event.subject.fx = null;
+      event.subject.fy = null;
+    }
+
+    return d3.drag()
+      .on("start", dragstarted)
+      .on("drag", dragged)
+      .on("end", dragended);
+  }
+
+  return svg.node();
+}
+
+document.addEventListener("DOMContentLoaded", function () {
+  const graphLink = document.getElementById("graph-link");
+
+  graphLink.addEventListener("click", function (event) {
+    event.preventDefault();
+    openPopup();
+  });
+});
+
+let popup;
+
+// Fonction pour faire pop-up le graphe
+function openPopup() {
+  popup = window.open("", "Graph Popup", "width=1000,height=1000");
+
+  if (popup.document.body.innerHTML === "") {
+    const graphContainer = popup.document.createElement("div");
+    graphContainer.id = "graph-container";
+    graphContainer.className = "graph-container";
+
+    const graph = createForceGraph({
       nodes: nodes,
       links: links
     }, {
-      width: 1000,
-      height: 1000
+      width: 500,
+      height: 500
     });
-  
-    return graph;
-  }
-  
-  document.addEventListener("DOMContentLoaded", function () {
-    const graphLink = document.getElementById("graph-link");
-  
-    graphLink.addEventListener("click", function (event) {
-      event.preventDefault();
-      openPopup();
-    });
-  });
-  
-  let popup;
-  
-  //Fonction pour faire pop-up le graphe
-  function openPopup() {
-    popup = window.open("", "Graph Popup", "width=1000,height=1000");
-  
-    if (popup.document.body.innerHTML === "") {
-      const graphContainer = popup.document.createElement("div");
-      graphContainer.id = "graph-container";
-      graphContainer.className = "graph-container";
-  
-      const graph = createForceGraph();
-      graphContainer.appendChild(graph);
-      popup.document.body.appendChild(graphContainer);
-    }
-  
-    const popupStyle = popup.document.createElement("style");
-    popupStyle.innerHTML = `
-      .graph-container {
-        margin: -400;
-        padding: 0;
-      }
-    `;
-    popup.document.head.appendChild(popupStyle);
-  }
-  
-  function closePopup() {
-    if (popup) {
-      popup.close();
-    }
+    
+    graphContainer.appendChild(graph);
+    popup.document.body.appendChild(graphContainer);
   }
 
-  
+  const popupStyle = popup.document.createElement("style");
+  popupStyle.innerHTML = `
+    .graph-container {
+      margin: 0;
+      padding: 0;
+    }
+  `;
+  popup.document.head.appendChild(popupStyle);
+}
+
+function closePopup() {
+  if (popup) {
+    popup.close();
+  }
+}
