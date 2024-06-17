@@ -689,3 +689,119 @@ function pos_div_descr() {
 };
 
 pos_div_descr();
+
+// Fonction pour afficher le graphique
+function createBarChart(selectedWeapon) {
+    // Filtre des données pour les armes sélectionnées
+    const weapon = weaponData[selectedWeapon];
+  
+    // Création des données pour le graphique
+    const data = Object.keys(weapon)
+      .filter(key => key !== "name" && key !== "total")
+      .map(key => ({
+        game: capitalizeWords(key.replace(/_/g, ' ')),
+        count: weapon[key]
+      }));
+  
+    // Suppression de l'élément SVG existant s'il existe
+    d3.select("#chart").selectAll("*").remove();
+  
+    // Déclaration des dimensions et des marges du graphique
+    const margin = { top: 30, right: 30, bottom: 50, left: 60 };
+    const width = 600 - margin.left - margin.right;
+    const height = 400 - margin.top - margin.bottom;
+  
+    // Déclaration de l'échelle x (jeux)
+    const x = d3.scaleBand()
+      .domain(data.map(d => d.game))
+      .range([margin.left, width + margin.left])
+      .padding(0.1);
+  
+    // Déclaration de l'échelle y (nombre d'armes)
+    const y = d3.scaleLinear()
+      .domain([0, d3.max(data, d => d.count)])
+      .nice()
+      .range([height, 0]);
+  
+    // Création de l'élément SVG
+    const svg = d3.select("#chart").append("svg")
+      .attr("width", width + margin.left + margin.right)
+      .attr("height", height + margin.top + margin.bottom)
+      .append("g")
+        .attr("transform", `translate(${margin.left},${margin.top})`);
+  
+    // Ajout des barres
+    svg.selectAll("rect")
+      .data(data)
+      .enter().append("rect")
+        .attr("x", d => x(d.game))
+        .attr("y", d => y(d.count))
+        .attr("height", d => height - y(d.count))
+        .attr("width", x.bandwidth())
+        .attr("fill", "darkorange");
+  
+    svg.append("g")
+    .attr("transform", `translate(0,${height})`)
+    .call(d3.axisBottom(x))
+    .selectAll("text")
+        .style("font-size", "14px")
+        .style("font-family", "Arial, sans-serif")
+        .attr("text-anchor", "end")
+        .attr("transform", function(d) {
+        return "rotate(-45) translate(-10,5)";
+        })
+        .style("text-anchor", "end")
+        .style("dominant-baseline", "middle");
+      
+  
+    // Ajout de l'axe y (nombre d'armes)
+    svg.append("g")
+      .call(d3.axisLeft(y).ticks(10))
+      .append("text")
+        .attr("fill", "#000")
+        .attr("transform", "rotate(-90)")
+        .attr("y", 6)
+        .attr("dy", "-3.5em")
+        .attr("text-anchor", "end")
+        .text("Nombre d'armes");
+  
+    // Ajout du titre
+    svg.append("text")
+      .attr("x", width / 2)
+      .attr("y", -margin.top / 2)
+      .attr("text-anchor", "middle")
+      .style("font-size", "18px")
+      .style("text-decoration", "underline")
+      .text(`Nombre d'armes par jeu pour ${weapon.name.replace(/_/g, ' ')}`);
+  
+  }
+  
+    // Sélection de l'arme par défaut
+    const defaultWeapon = "daggers";
+    createBarChart(defaultWeapon);
+  
+    // Sélection de l'arme via un menu déroulant
+    const select = d3.select("#weapon-select")
+    .on("change", function() {
+        const selectedWeapon = this.value;
+        createBarChart(selectedWeapon);
+    });
+
+    select.selectAll("option")
+    .data(Object.keys(weaponData)
+        .filter(d => d !== "rien"))  // Exclure l'option "rien"
+    .enter().append("option")
+    .text(d => capitalizeWords(weaponData[d].name.replace(/_/g, ' ')))
+    .attr("value", d => d);
+
+
+  
+    // Fonction pour capitaliser la première lettre de chaque mot
+    function capitalizeWords(str) {
+        return str.replace(/\b([ivx]+)\b/gi, function(match) {
+        return match.toUpperCase();
+        }).replace(/\b\w/g, function(txt) {
+        return txt.toUpperCase();
+        });
+    }
+    

@@ -791,3 +791,7 @@ body {
     transform: translate(-315px, -400px);
 }
 
+svg {
+    shape-rendering: geometricPrecision;
+  }
+  
