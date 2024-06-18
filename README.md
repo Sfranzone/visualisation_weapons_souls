@@ -27,6 +27,7 @@ Following our interactive visualization, we offer you three other visualizations
 
 ## Copyright
 All images are from the Fandoms and the Steam pages of the respective games.
+We used the [d3.js](https://d3js.org/) library for the second part.
 
 ## Creators
 This project was created by:
