@@ -333,81 +333,97 @@ function pos_div_descr() {
 
 pos_div_descr();
 
+// Données pour lwa couleurs spécifiques pour chaque jeu (bar et pie)
+let gamesData = [
+  { name: "elden_ring", value: weaponData.toutes_armes.elden_ring, color: "#eaa10b" },
+  { name: "dark_souls_iii", value: weaponData.toutes_armes.dark_souls_iii, color: "#dbe02a" },
+  { name: "sekiro", value: weaponData.toutes_armes.sekiro, color: "#78c756" },
+  { name: "remant_ii", value: weaponData.toutes_armes.remant_ii, color: "#FF0000" },
+  { name: "bloodborne", value: weaponData.toutes_armes.bloodborne, color: "#8A2BE2" },
+  { name: "nioh", value: weaponData.toutes_armes.nioh, color: "#178eb3" }
+];
+
 //Bar plot
-// Fonction pour afficher le graphique
+// Fonction pour obtenir la couleur du jeu
+function getGameColor(gameName) {
+  const game = gamesData.find(g => g.name === gameName.toLowerCase().replace(/ /g, '_'));
+  return game ? game.color : "darkorange"; // Couleur par défaut si le jeu n'est pas trouvé
+}
+
+// Fonction pour afficher le graphique en barres
 function createBarChart(selectedWeapon) {
-    // Filtre des données pour les armes sélectionnées
-    const weapon = weaponData[selectedWeapon];
-  
-    const data = Object.keys(weapon)
+  // Filtre des données pour les armes sélectionnées
+  const weapon = weaponData[selectedWeapon];
+
+  const data = Object.keys(weapon)
       .filter(key => key !== "name" && key !== "total")
       .map(key => ({
-        game: capitalizeWords(key.replace(/_/g, ' ')),
-        count: weapon[key]
+          game: capitalizeWords(key.replace(/_/g, ' ')),
+          count: weapon[key]
       }));
-  
-    d3.select("#chart").selectAll("*").remove();
-  
-    // Déclaration des dimensions et des marges du graphique
-    const margin = { top: 40, right: 40, bottom: 100, left: 40 };  // Augmenter la marge inférieure
-    const width = 600 - margin.left - margin.right;
-    const height = 400 - margin.top - margin.bottom;
-  
-    // Déclaration de l'échelle x (jeux)
-    const x = d3.scaleBand()
+
+  d3.select("#chart").selectAll("*").remove();
+
+  // Déclaration des dimensions et des marges du graphique
+  const margin = { top: 40, right: 40, bottom: 100, left: 40 };  // Augmenter la marge inférieure
+  const width = 600 - margin.left - margin.right;
+  const height = 400 - margin.top - margin.bottom;
+
+  // Déclaration de l'échelle x (jeux)
+  const x = d3.scaleBand()
       .domain(data.map(d => d.game))
       .range([margin.left, width + margin.left])
       .padding(0.1);
-  
-    // Déclaration de l'échelle y (nombre d'armes)
-    const y = d3.scaleLinear()
+
+  // Déclaration de l'échelle y (nombre d'armes)
+  const y = d3.scaleLinear()
       .domain([0, d3.max(data, d => d.count)])
       .nice()
       .range([height, 0]);
-  
-    // Création de l'élément SVG
-    const svg = d3.select("#chart").append("svg")
+
+  // Création de l'élément SVG
+  const svg = d3.select("#chart").append("svg")
       .attr("width", width + margin.left + margin.right)
       .attr("height", height + margin.top + margin.bottom)
       .append("g")
-        .attr("transform", `translate(${margin.left},${margin.top})`);
-  
-    // Ajout des barres
-    svg.selectAll("rect")
+      .attr("transform", `translate(${margin.left},${margin.top})`);
+
+  // Ajout des barres
+  svg.selectAll("rect")
       .data(data)
       .enter().append("rect")
-        .attr("x", d => x(d.game))
-        .attr("y", d => y(d.count))
-        .attr("height", d => height - y(d.count))
-        .attr("width", x.bandwidth())
-        .attr("fill", "darkorange");
-  
-    svg.append("g")
+      .attr("x", d => x(d.game))
+      .attr("y", d => y(d.count))
+      .attr("height", d => height - y(d.count))
+      .attr("width", x.bandwidth())
+      .attr("fill", d => getGameColor(d.game)); // Utilisation de la couleur spécifiée pour chaque jeu
+
+  svg.append("g")
       .attr("transform", `translate(0,${height})`)
       .call(d3.axisBottom(x))
       .selectAll("text")
-        .style("font-size", "12px")
-        .style("font-family", "Arial, sans-serif")
-        .attr("text-anchor", "end")
-        .attr("transform", function(d) {
+      .style("font-size", "12px")
+      .style("font-family", "Arial, sans-serif")
+      .attr("text-anchor", "end")
+      .attr("transform", function(d) {
           return "rotate(-45) translate(-10,5)";
-        })
-        .style("text-anchor", "end")
-        .style("dominant-baseline", "middle");
-  
-    // Ajout de l'axe y (nombre d'armes)
-    svg.append("g")
+      })
+      .style("text-anchor", "end")
+      .style("dominant-baseline", "middle");
+
+  // Ajout de l'axe y (nombre d'armes)
+  svg.append("g")
       .call(d3.axisLeft(y).ticks(10))
       .append("text")
-        .attr("fill", "#000")
-        .attr("transform", "rotate(-90)")
-        .attr("y", 6)
-        .attr("dy", "-3.5em")
-        .attr("text-anchor", "end")
-        .text("Nombre d'armes");
-  
-    // Ajout du titre
-    svg.append("text")
+      .attr("fill", "#000")
+      .attr("transform", "rotate(-90)")
+      .attr("y", 6)
+      .attr("dy", "-3.5em")
+      .attr("text-anchor", "end")
+      .text("Nombre d'armes");
+
+  // Ajout du titre
+  svg.append("text")
       .attr("x", width / 2)
       .attr("y", -margin.top / 2)
       .attr("text-anchor", "middle")
@@ -415,21 +431,21 @@ function createBarChart(selectedWeapon) {
       .style("text-decoration", "underline")
       .text(`Nombre d'armes par jeu pour ${weapon.name.replace(/_/g, ' ')}`);
 }
-  
+
 // Sélection de l'arme par défaut
 const defaultWeapon = "daggers";
 createBarChart(defaultWeapon);
-  
+
 // Sélection de l'arme via un menu déroulant
 const select = d3.select("#weapon-select")
   .on("change", function() {
-    const selectedWeapon = this.value;
-    createBarChart(selectedWeapon);
+      const selectedWeapon = this.value;
+      createBarChart(selectedWeapon);
   });
 
 select.selectAll("option")
   .data(Object.keys(weaponData)
-    .filter(d => d !== "rien" && d !== "toutes_armes"))
+      .filter(d => d !== "rien" && d !== "toutes_armes"))
   .enter().append("option")
   .text(d => capitalizeWords(weaponData[d].name.replace(/_/g, ' ')))
   .attr("value", d => d);
@@ -437,85 +453,70 @@ select.selectAll("option")
 // Fonction pour capitaliser la première lettre de chaque mot et les chiffres romains
 function capitalizeWords(str) {
   return str.replace(/\b([ivx]+)\b/gi, function(match) {
-    return match.toUpperCase();
+      return match.toUpperCase();
   }).replace(/\b\w/g, function(txt) {
-    return txt.toUpperCase();
+      return txt.toUpperCase();
   });
 }
 
-//Pie chart
-// Données pour la pie chart avec couleurs spécifiques pour chaque jeu
-let gamesData = [
-    { name: "elden_ring", value: weaponData.toutes_armes.elden_ring, color: "#eaa10b" },
-    { name: "dark_souls_iii", value: weaponData.toutes_armes.dark_souls_iii, color: "#dbe02a" },
-    { name: "sekiro", value: weaponData.toutes_armes.sekiro, color: "#78c756" },
-    { name: "remant_ii", value: weaponData.toutes_armes.remant_ii, color: "#FF0000" },
-    { name: "bloodborne", value: weaponData.toutes_armes.bloodborne, color: "#8A2BE2" },
-    { name: "nioh", value: weaponData.toutes_armes.nioh, color: "#0000FF" }
-];
 
+//Pie chart
 // Définir les dimensions et le rayon de la pie chart
 let width = 600;
-let height = 400;
-let radius = Math.min(width, height) / 2;
+let height = 450;
+let radius = Math.min(width, height - 50) / 2
 
 // Sélectionner l'élément SVG et configurer l'élément g pour le graphique
 let svg = d3.select('body')
-    .append('svg')
-    .attr('width', width)
-    .attr('height', height)
-    .append('g')
-    .attr('transform', 'translate(' + width / 2 + ',' + height / 2 + ')');
+  .append('svg')
+  .attr('width', width)
+  .attr('height', height);
+
+let chartGroup = svg.append('g')
+  .attr('transform', 'translate(' + width / 2 + ',' + (height / 2 + 20) + ')');
 
 // Créer un arc basé sur les valeurs
 let arc = d3.arc()
-    .innerRadius(0)
-    .outerRadius(radius);
+  .innerRadius(0)
+  .outerRadius(radius);
 
 // Données pour la pie chart
 let pie = d3.pie()
-    .value(d => d.value);
+  .value(d => d.value);
 
 // Créer des arcs pour chaque segment de la pie chart
-let arcs = svg.selectAll('arc')
-    .data(pie(gamesData))
-    .enter()
-    .append('g')
-    .attr('class', 'arc');
+let arcs = chartGroup.selectAll('arc')
+  .data(pie(gamesData))
+  .enter()
+  .append('g')
+  .attr('class', 'arc');
 
 // Ajouter des chemins pour chaque arc
 arcs.append('path')
-    .attr('d', arc)
-    .attr('fill', d => d.data.color) // Utilisation de la couleur spécifiée pour chaque jeu
-    .attr('stroke', 'white')
-    .style('stroke-width', '2px');
+  .attr('d', arc)
+  .attr('fill', d => d.data.color) // Utilisation de la couleur spécifiée pour chaque jeu
+  .attr('stroke', 'white')
+  .style('stroke-width', '2px');
 
-// Ajouter des légendes à côté du graphique
-let legend = svg.selectAll('.legend')
-    .data(pie(gamesData))
-    .enter()
-    .append('g')
-    .attr('class', 'legend')
-    .attr('transform', (d, i) => `translate(${width / 2 + radius + 10},${i * 20 - radius})`);
+// Ajouter des légendes au-dessus du graphique
+let legend = svg.append('g')
+.attr('class', 'legend')
+.attr('transform', `translate(${width / 2},${10})`);
 
-// Ajouter des rectangles colorés pour chaque entrée de légende
-legend.append('rect')
-    .attr('width', 10)
-    .attr('height', 10)
-    .attr('fill', d => d.data.color); // Utilisation de la couleur spécifiée pour chaque jeu
-
-// Ajouter des étiquettes pour chaque entrée de légende
-legend.append('text')
-    .attr('x', 15)
-    .attr('y', 5)
-    .text(d => `${d.data.name.replace(/_/g, ' ').toUpperCase()} (${d.data.value})`)
-    .style('font-size', '12px')
-    .style('fill', 'white')
-    .style('alignment-baseline', 'middle');
+legend.selectAll('text')
+.data(gamesData)
+.enter()
+.append('text')
+.attr('x', (d, i) => (i % 3) * 200 - 200) // Répartir les légendes sur deux lignes
+.attr('y', (d, i) => Math.floor(i / 3) * 20) // Espacer verticalement les lignes
+.text(d => d.name.replace(/_/g, ' ').toUpperCase())
+.style('font-size', '14px')
+.style('fill', d => d.color)
+.style('text-anchor', 'middle');
 
 // Fonction pour calculer l'angle médian d'un arc
 function midAngle(d) {
-    return d.startAngle + (d.endAngle - d.startAngle) / 2;
+  return d.startAngle + (d.endAngle - d.startAngle) / 2;
 }
 
 // Force graph
@@ -549,6 +550,16 @@ games.forEach(game => {
   });
 });
 
+// Dictionnaire de couleurs pour les jeux
+const colorMapping = {
+  elden_ring: "#eaa10b",
+  dark_souls_iii: "#dbe02a",
+  sekiro: "#78c756",
+  remant_ii: "#FF0000",
+  bloodborne: "#8A2BE2",
+  nioh: "#178eb3"
+};
+
 // Fonction pour créer le graphique
 function createForceGraph({
   nodes,
@@ -557,7 +568,7 @@ function createForceGraph({
   nodeId = d => d.id,
   nodeGroup = d => d.type === 'weapon' ? 'weapon' : 'game',
   nodeTitle = d => d.formattedName, // Utiliser le nom formaté pour l'affichage
-  nodeFill = d => d.type === 'weapon' ? '#3182bd' : '#fd8d3c',
+  nodeFill = d => d.type === 'weapon' ? '#173bb3' : colorMapping[d.originalId], // Utilisation de la couleur spécifiée pour chaque jeu
   nodeStroke = "#fff",
   nodeStrokeWidth = 1.5,
   nodeStrokeOpacity = 1,
