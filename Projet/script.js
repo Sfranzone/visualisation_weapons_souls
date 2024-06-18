@@ -460,11 +460,24 @@ function capitalizeWords(str) {
 }
 
 
-//Pie chart
+// Pie chart
 // Définir les dimensions et le rayon de la pie chart
 let width = 600;
 let height = 450;
-let radius = Math.min(width, height - 50) / 2
+let radius = Math.min(width, height - 50) / 2;
+
+// Rajouter de l'espace vide autour du pie chart
+let outerRadius = radius * 0.9;
+
+// Données pour la pie chart
+let gamesData2 = [
+  { name: "elden_ring", value: 313, color: "#eaa10b" },
+  { name: "dark_souls_iii", value: 222, color: "#dbe02a" },
+  { name: "sekiro", value: 12, color: "#78c756" },
+  { name: "remant_ii", value: 94, color: "#FF0000" },
+  { name: "bloodborne", value: 26, color: "#8A2BE2" },
+  { name: "nioh", value: 216, color: "#178eb3" }
+];
 
 // Sélectionner l'élément SVG et configurer l'élément g pour le graphique
 let svg = d3.select('body')
@@ -478,41 +491,66 @@ let chartGroup = svg.append('g')
 // Créer un arc basé sur les valeurs
 let arc = d3.arc()
   .innerRadius(0)
-  .outerRadius(radius);
-
-// Données pour la pie chart
-let pie = d3.pie()
-  .value(d => d.value);
+  .outerRadius(outerRadius);
 
 // Créer des arcs pour chaque segment de la pie chart
 let arcs = chartGroup.selectAll('arc')
-  .data(pie(gamesData))
+  .data(d3.pie().value(d => d.value)(gamesData2))
   .enter()
   .append('g')
   .attr('class', 'arc');
 
-// Ajouter des chemins pour chaque arc
+// Ajouter des chemins pour chaque arc avec labels au survol
 arcs.append('path')
   .attr('d', arc)
-  .attr('fill', d => d.data.color) // Utilisation de la couleur spécifiée pour chaque jeu
+  .attr('fill', d => d.data.color)
   .attr('stroke', 'white')
-  .style('stroke-width', '2px');
+  .style('stroke-width', '2px')
+  .on('mouseover', function(event, d) {
+    d3.select(this)
+      .transition()
+      .duration(200)
+      .attr('d', d3.arc()
+        .innerRadius(0)
+        .outerRadius(outerRadius * 1.1)
+      );
+
+    chartGroup.append('text')
+      .attr('transform', function() {
+        let pos = arc.centroid(d);
+        pos[0] *= 1.8;
+        pos[1] *= 1.8;
+        return 'translate(' + pos + ')';
+      })
+      .attr('dy', '0.35em')
+      .attr('text-anchor', 'middle')
+      .style('font-size', '14px')
+      .text(d.data.value);
+  })
+  .on('mouseout', function(d) {
+    d3.select(this)
+      .transition()
+      .duration(200)
+      .attr('d', arc);
+
+    chartGroup.selectAll('text').remove();
+  });
 
 // Ajouter des légendes au-dessus du graphique
 let legend = svg.append('g')
-.attr('class', 'legend')
-.attr('transform', `translate(${width / 2},${10})`);
+  .attr('class', 'legend')
+  .attr('transform', `translate(${width / 2},${10})`);
 
 legend.selectAll('text')
-.data(gamesData)
-.enter()
-.append('text')
-.attr('x', (d, i) => (i % 3) * 200 - 200) // Répartir les légendes sur deux lignes
-.attr('y', (d, i) => Math.floor(i / 3) * 20) // Espacer verticalement les lignes
-.text(d => d.name.replace(/_/g, ' ').toUpperCase())
-.style('font-size', '14px')
-.style('fill', d => d.color)
-.style('text-anchor', 'middle');
+  .data(gamesData2)
+  .enter()
+  .append('text')
+  .attr('x', (d, i) => (i % 3) * 200 - 200)
+  .attr('y', (d, i) => Math.floor(i / 3) * 20)
+  .text(d => d.name.replace(/_/g, ' ').toUpperCase())
+  .style('font-size', '14px')
+  .style('fill', d => d.color)
+  .style('text-anchor', 'middle');
 
 // Fonction pour calculer l'angle médian d'un arc
 function midAngle(d) {
