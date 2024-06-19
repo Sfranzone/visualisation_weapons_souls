@@ -621,21 +621,21 @@ body {
     visibility: visible;
 }
 
-/* Specific positioning for glintstone_staffs */
-.glintstone_staffs {
+/* Specific positioning for staves */
+.staves {
     top: 850px;
     left: 700px;
 }
-.glintstone_staffs_description {
+.staves_description {
     visibility: hidden;
     top: 950px;
     left: 750px;
 }
-.glintstone_staffs_empty {
+.staves_empty {
     top: 850px;
     left: 700px;
 }
-.glintstone_staffs_empty:hover + .glintstone_staffs_description {
+.staves_empty:hover + .staves_description {
     visibility: visible;
 }
 

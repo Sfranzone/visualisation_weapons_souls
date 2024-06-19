@@ -29,7 +29,7 @@ let weaponData = {
     greatbows: { "name": "greatbows","elden_ring": 4, "dark_souls_iii": 3, "sekiro": 0, "remant_ii": 2, "bloodborne": 0, "nioh": 0, "total": 9 },
     crossbows: { "name": "crossbows","elden_ring": 7, "dark_souls_iii": 7, "sekiro": 0, "remant_ii": 2, "bloodborne": 0, "nioh": 0, "total": 16 },
     ballistas: { "name": "ballistas","elden_ring": 2, "dark_souls_iii": 0, "sekiro": 0, "remant_ii": 0, "bloodborne": 0, "nioh": 7, "total": 9 },
-    glintstone_staffs: { "name": "glintstone_staffs","elden_ring": 18, "dark_souls_iii": 12, "sekiro": 0, "remant_ii": 4, "bloodborne": 0, "nioh": 0, "total": 34 },
+    staves: { "name": "staves","elden_ring": 18, "dark_souls_iii": 12, "sekiro": 0, "remant_ii": 4, "bloodborne": 0, "nioh": 0, "total": 34 },
     sacred_seals: { "name": "sacred_seals","elden_ring": 9, "dark_souls_iii": 0, "sekiro": 0, "remant_ii": 0, "bloodborne": 0, "nioh": 0, "total": 9 },
     tools: { "name": "tools","elden_ring": 11, "dark_souls_iii": 16, "sekiro": 10, "remant_ii": 0, "bloodborne": 3, "nioh": 0, "total": 40 },
     hand_guns: { "name": "hand_guns","elden_ring": 0, "dark_souls_iii": 0, "sekiro": 0, "remant_ii": 21, "bloodborne": 0, "nioh": 0, "total": 21 },
@@ -235,9 +235,9 @@ const checkboxData = {
         visibleClasses: ['weapon_identifier_ER', 'weapon_identifier_N'],
         shadowId: 'shadow_ballistas'
     },
-    glintstone_staffs_checkbox: {
+    staves_checkbox: {
         visibleClasses: ['weapon_identifier_ER', 'weapon_identifier_DS', 'weapon_identifier_R'],
-        shadowId: 'shadow_glintstone_staffs'
+        shadowId: 'shadow_staves'
     },
     sacred_seals_checkbox: {
         visibleClasses: ['weapon_identifier_ER'],
