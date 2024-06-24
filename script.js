@@ -114,6 +114,7 @@ function gothrough_weapons(){
         };
         change_fill(change_to_pourcent(total_weapon_number,x),x);
         document.getElementById(`${x}_descr`).innerHTML = `${change_to_pourcent(total_weapon_number,x)}%`;
+        document.getElementById(`${x}_descr`).style.color = `rgb(150,${change_to_pourcent(total_weapon_number,x)*2.55},0)`;
     };
 };
 
@@ -313,7 +314,7 @@ function pos_div_descr() {
             weapon.style.top = `${top_pos}px`;
             weapon.style.left = `${left_pos}px`;
             weapon.style.fontSize = `14px`;
-            weapon.style.color = `#B87333`;
+            weapon.style.color = `rgb(150,0,0)`;
             weapon.style.fontFamily = "Lucida Console", "Courier New";
             weapon.style.textAlignLast = "justify";
             weapon.style.textShadow = "0px 2px 4px orange";

@@ -82,7 +82,7 @@ body {
     width: 200px;
     min-height: 100px;
     position: absolute;
-    z-index: 2;
+    z-index: 4;
     background-color: black;
     opacity: 0.8;
     border-style: solid;
