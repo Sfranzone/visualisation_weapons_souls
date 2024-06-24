@@ -465,22 +465,20 @@ function capitalizeWords(str) {
 
 
 // Pie chart
-// Définir les dimensions et le rayon de la pie chart
-let width = 600;
-let height = 450;
+// Dimensions de la pie chart
+let width = 500;
+let height = 500;
 let radius = Math.min(width, height - 50) / 2;
-
-// Rajouter de l'espace vide autour du pie chart
 let outerRadius = radius * 0.9;
 
 // Données pour la pie chart
 let gamesData2 = [
-  { name: "elden_ring", value: 313, color: "#eaa10b" },
-  { name: "dark_souls_iii", value: 222, color: "#dbe02a" },
-  { name: "sekiro", value: 12, color: "#78c756" },
-  { name: "remant_ii", value: 94, color: "#FF0000" },
-  { name: "bloodborne", value: 26, color: "#8A2BE2" },
-  { name: "nioh", value: 216, color: "#178eb3" }
+  { name: "elden_ring", value: 313, extraValue: 31, color: "#eaa10b" },
+  { name: "dark_souls_iii", value: 222, extraValue: 24, color: "#dbe02a" },
+  { name: "sekiro", value: 12, extraValue: 2, color: "#78c756" },
+  { name: "remant_ii", value: 94, extraValue: 19, color: "#FF0000" },
+  { name: "bloodborne", value: 26, extraValue: 12, color: "#8A2BE2" },
+  { name: "nioh", value: 216, extraValue: 9, color: "#178eb3" }
 ];
 
 // Sélectionner l'élément SVG et configurer l'élément g pour le graphique
@@ -519,17 +517,36 @@ arcs.append('path')
         .outerRadius(outerRadius * 1.1)
       );
 
+    let pos = arc.centroid(d);
+    pos[0] *= 1.5;
+    pos[1] *= 1.5;
+
+    // Ajout du fond rectangulaire
+    let tooltipBox = chartGroup.append('rect')
+      .attr('class', 'tooltip-bg')
+      .attr('width', 60)
+      .attr('height', 40)
+      .attr('transform', `translate(${pos[0] - 30}, ${pos[1] - 20})`)
+      .style('fill', 'white')
+      .style('stroke', d.data.color)
+      .style('stroke-width', '2px')
+      .style('pointer-events', 'none');
+
+    // Ajout du texte à l'intérieur de la boîte
     chartGroup.append('text')
-      .attr('transform', function() {
-        let pos = arc.centroid(d);
-        pos[0] *= 1.8;
-        pos[1] *= 1.8;
-        return 'translate(' + pos + ')';
-      })
-      .attr('dy', '0.35em')
+      .attr('class', 'tooltip-text')
+      .attr('transform', `translate(${pos[0]}, ${pos[1] - 5})`)
+      .attr('text-anchor', 'middle')
+      .style('font-size', '16px')
+      .style('font-weight', 'bold')
+      .text(`${d.data.value}w`);
+
+    chartGroup.append('text')
+      .attr('class', 'tooltip-text')
+      .attr('transform', `translate(${pos[0]}, ${pos[1] + 15})`)
       .attr('text-anchor', 'middle')
       .style('font-size', '14px')
-      .text(d.data.value);
+      .text(`${d.data.extraValue}t`);
   })
   .on('mouseout', function(d) {
     d3.select(this)
@@ -537,7 +554,9 @@ arcs.append('path')
       .duration(200)
       .attr('d', arc);
 
-    chartGroup.selectAll('text').remove();
+    // Suppression de la boîte et du texte au survol
+    chartGroup.selectAll('.tooltip-bg').remove();
+    chartGroup.selectAll('.tooltip-text').remove();
   });
 
 // Ajouter des légendes au-dessus du graphique
@@ -555,11 +574,6 @@ legend.selectAll('text')
   .style('font-size', '14px')
   .style('fill', d => d.color)
   .style('text-anchor', 'middle');
-
-// Fonction pour calculer l'angle médian d'un arc
-function midAngle(d) {
-  return d.startAngle + (d.endAngle - d.startAngle) / 2;
-}
 
 // Force graph
 let nodes = [];

@@ -860,3 +860,14 @@ h1 {
 #weapon-select {
     font-size: 20px;
 }
+
+.tooltip-bg {
+    fill: white;
+    stroke-width: 2px;
+}
+  
+.tooltip-text {
+    font-size: 16px;
+    font-weight: bold;
+}
+  
