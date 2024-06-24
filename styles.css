@@ -756,39 +756,39 @@ body {
 
 .placeholder {
     position: relative;
-    transform: translate(-1040px, -525px); /* Déplacer tout le conteneur */
+    transform: translate(-1040px, -525px);
     z-index: 2;
 }
 
 .weapon_identifier_ER {
-    height: 200px;
-    transform: translate(1700px, -900px);
+    height: 170px;
+    transform: translate(1440px, -850px);
 }
 
 .weapon_identifier_DS {
-    height: 120px;
-    transform: translate(1240px, -760px);
+    height: 100px;
+    transform: translate(1050px, -720px);
 }
 
 .weapon_identifier_S {
-    height: 70px;
-    transform: translate(770px, -640px);
+    height: 60px;
+    transform: translate(660px, -600px);
 }
 
 .weapon_identifier_R {
-    height: 85px;
-    transform: translate(465px, -560px);
+    height: 70px;
+    transform: translate(400px, -510px);
 }
 
 .weapon_identifier_B {
-    height: 70px;
+    height: 50px;
     filter: invert();
-    transform: translate(75px, -465px);
+    transform: translate(85px, -415px);
 }
 
 .weapon_identifier_N {
-    height: 150px;
-    transform: translate(-315px, -400px);
+    height: 120px;
+    transform: translate(-200px, -350px);
 }
 
 svg {
@@ -825,8 +825,8 @@ h1 {
 .pie-plot-analysis {
     text-align: justify;
     font-size: 20px;
-    margin-left: 800px;
-    margin-right: 800px;
+    margin-left: 700px;
+    margin-right: 700px;
 }
 
 .charts-container {
