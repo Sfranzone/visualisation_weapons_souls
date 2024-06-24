@@ -464,7 +464,6 @@ function capitalizeWords(str) {
 }
 
 
-// Pie chart
 // Dimensions de la pie chart
 let width = 500;
 let height = 500;
@@ -530,7 +529,7 @@ arcs.append('path')
       .style('fill', 'white')
       .style('stroke', d.data.color)
       .style('stroke-width', '2px')
-      .style('pointer-events', 'none');
+      .style('pointer-events', 'none'); // Désactiver les événements pointer
 
     // Ajout du texte à l'intérieur de la boîte
     chartGroup.append('text')
@@ -539,14 +538,16 @@ arcs.append('path')
       .attr('text-anchor', 'middle')
       .style('font-size', '16px')
       .style('font-weight', 'bold')
-      .text(`${d.data.value}w`);
+      .text(`${d.data.value}w`)
+      .style('pointer-events', 'none'); // Désactiver les événements pointer
 
     chartGroup.append('text')
       .attr('class', 'tooltip-text')
       .attr('transform', `translate(${pos[0]}, ${pos[1] + 15})`)
       .attr('text-anchor', 'middle')
       .style('font-size', '14px')
-      .text(`${d.data.extraValue}t`);
+      .text(`${d.data.extraValue}t`)
+      .style('pointer-events', 'none'); // Désactiver les événements pointer
   })
   .on('mouseout', function(d) {
     d3.select(this)
