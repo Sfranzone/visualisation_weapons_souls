@@ -69,6 +69,7 @@ function change_to_pourcent(chosen_weapon,weapon_name) {
 function change_fill(percent_weapon, weapon_type) {
     let class_test = document.getElementById(`${weapon_type}`);
     class_test.style.clipPath = `rect(${100-percent_weapon}px 100px 100px 0px)`;
+    class_test.style.transition = "all 2s";
 };
 
 /* let games_chosen = "";
@@ -115,6 +116,7 @@ function gothrough_weapons(){
         change_fill(change_to_pourcent(total_weapon_number,x),x);
         document.getElementById(`${x}_descr`).innerHTML = `${change_to_pourcent(total_weapon_number,x)}%`;
         document.getElementById(`${x}_descr`).style.color = `rgb(150,${change_to_pourcent(total_weapon_number,x)*2.55},0)`;
+        document.getElementById(`${x}_descr`).style.transition = `all 2s`;
     };
 };
 
@@ -328,6 +330,7 @@ function pos_div_descr() {
                 weapon.style.top = `${top_pos}px`;
                 weapon.style.left = `${left_pos}px`;
             }
+            weapon.style.transition = "all 2s";
         };
     };
 };
