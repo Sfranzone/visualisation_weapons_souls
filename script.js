@@ -319,7 +319,6 @@ function pos_div_descr() {
             weapon.style.color = `rgb(150,0,0)`;
             weapon.style.fontFamily = "Lucida Console", "Courier New";
             weapon.style.textAlignLast = "justify";
-            weapon.style.textShadow = "0px 2px 4px orange";
             weapon.style.zIndex = 3;
             compteur++;
             console.log(compteur);
